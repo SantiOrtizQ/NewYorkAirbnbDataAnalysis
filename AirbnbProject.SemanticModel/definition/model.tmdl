@@ -1,0 +1,22 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-GB
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBI_ProTooling = ["DevMode","MCP-PBIModeling"]
+
+annotation PBI_QueryOrder = ["AB_NYC_2019"]
+
+ref table Dim_Host
+ref table Dim_Neighbourhood
+ref table Dim_RoomType
+ref table Fact_Listings
+ref table _Measures
+
+ref cultureInfo en-US
+

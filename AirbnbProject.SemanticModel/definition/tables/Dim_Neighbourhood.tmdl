@@ -1,0 +1,35 @@
+table Dim_Neighbourhood
+	lineageTag: 2f60711f-6c09-42a7-b4c9-12789096c220
+
+	column neighbourhood_id
+		dataType: int64
+		isKey
+		lineageTag: ae9254f2-acd0-42a5-a759-3f08ace2e4a7
+		sourceColumn: neighbourhood_id
+
+	column neighbourhood
+		dataType: string
+		lineageTag: 4438d8d9-1fbd-4e5a-b20e-ec89e27dcda1
+		dataCategory: City
+		sourceColumn: neighbourhood
+
+	column neighbourhood_group
+		dataType: string
+		lineageTag: d671830e-a43a-448a-820d-5c5a24c98a35
+		dataCategory: StateOrProvince
+		sourceColumn: neighbourhood_group
+
+	partition Dim_Neighbourhood = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\Santiago\OneDrive\Courses\PowerBICourse\AirbnbProjects\AB_NYC_2019.csv"),[Delimiter=",", Columns=16, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Selected Columns" = Table.SelectColumns(#"Promoted Headers", {"neighbourhood", "neighbourhood_group"}),
+				    #"Removed Duplicates" = Table.Distinct(#"Selected Columns", {"neighbourhood"}),
+				    #"Sorted" = Table.Sort(#"Removed Duplicates", {{"neighbourhood_group", Order.Ascending}, {"neighbourhood", Order.Ascending}}),
+				    #"Added Index" = Table.AddIndexColumn(#"Sorted", "neighbourhood_id", 1, 1, Int64.Type),
+				    #"Reordered" = Table.ReorderColumns(#"Added Index", {"neighbourhood_id", "neighbourhood", "neighbourhood_group"})
+				in
+				    #"Reordered"
+

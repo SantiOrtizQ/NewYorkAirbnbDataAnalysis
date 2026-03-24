@@ -1,0 +1,29 @@
+table Dim_Host
+	lineageTag: caa0a004-6758-43a9-a4b6-ffa12df0fafe
+
+	column host_id
+		dataType: int64
+		isKey
+		lineageTag: 97093c4a-8637-4146-ae18-7b18fd76f911
+		sourceColumn: host_id
+
+	column host_name
+		dataType: string
+		lineageTag: 554d4223-0624-4685-a3d8-56b8b4ab8844
+		sourceColumn: host_name
+
+	partition Dim_Host = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\Santiago\OneDrive\Courses\PowerBICourse\AirbnbProjects\AB_NYC_2019.csv"),[Delimiter=",", Columns=16, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Selected Columns" = Table.SelectColumns(#"Promoted Headers", {"host_id", "host_name"}),
+				    #"Changed Types" = Table.TransformColumnTypes(#"Selected Columns", {{"host_id", Int64.Type}, {"host_name", type text}}),
+				    #"Removed Errors" = Table.RemoveRowsWithErrors(#"Changed Types", {"host_id"}),
+				    #"Filtered Nulls" = Table.SelectRows(#"Removed Errors", each [host_id] <> null),
+				    #"Removed Duplicates" = Table.Distinct(#"Filtered Nulls", {"host_id"}),
+				    #"Sorted" = Table.Sort(#"Removed Duplicates", {{"host_id", Order.Ascending}})
+				in
+				    #"Sorted"
+

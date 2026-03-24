@@ -1,0 +1,125 @@
+table Fact_Listings
+	lineageTag: 1a2c6d4c-c386-454e-b3c8-28e886f975bf
+
+	column listing_id
+		dataType: int64
+		isKey
+		lineageTag: c9aca205-8608-4221-9be6-680ab02f1f80
+		sourceColumn: listing_id
+
+	column name
+		dataType: string
+		lineageTag: 16b9bff2-a047-4d23-8795-913e0267a8a5
+		sourceColumn: name
+
+	column host_id
+		dataType: int64
+		lineageTag: e741c3bd-cffb-4150-b7e7-35f55fe307dc
+		sourceColumn: host_id
+
+	column neighbourhood_id
+		dataType: int64
+		lineageTag: 50520ad4-a0db-4621-a367-4960673db663
+		sourceColumn: neighbourhood_id
+
+	column room_type_id
+		dataType: int64
+		lineageTag: f00b07e2-1802-4373-9836-6f64ac4ffd89
+		sourceColumn: room_type_id
+
+	column latitude
+		dataType: double
+		lineageTag: b2dfecde-1db2-41a9-b38e-0a7d5cce0f93
+		dataCategory: Latitude
+		sourceColumn: latitude
+
+	column longitude
+		dataType: double
+		lineageTag: ca08ab8a-01db-4a72-848c-3e9b19cca78f
+		dataCategory: Longitude
+		sourceColumn: longitude
+
+	column price
+		dataType: int64
+		lineageTag: fd01d9d2-ae45-4432-8938-636944073004
+		sourceColumn: price
+
+	column minimum_nights
+		dataType: int64
+		lineageTag: 67fbbbb1-ec06-4b29-89f7-1860e9ece239
+		sourceColumn: minimum_nights
+
+	column number_of_reviews
+		dataType: int64
+		lineageTag: 5c3882fd-ffee-446c-b275-d0e3ac11c14b
+		sourceColumn: number_of_reviews
+
+	column last_review
+		dataType: dateTime
+		lineageTag: 8f97bee2-518d-4cda-aa5f-917f4d7f66dd
+		sourceColumn: last_review
+
+	column reviews_per_month
+		dataType: double
+		lineageTag: 236f1ada-4f44-4bf5-838a-ac2aac468964
+		sourceColumn: reviews_per_month
+
+	column calculated_host_listings_count
+		dataType: int64
+		lineageTag: 39a2234f-f35a-43fb-a6c1-af64a4869f24
+		sourceColumn: calculated_host_listings_count
+
+	column availability_365
+		dataType: int64
+		lineageTag: bc3a81cc-d2da-4737-bc8c-688177adc959
+		sourceColumn: availability_365
+
+	partition Fact_Listings = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\Santiago\OneDrive\Courses\PowerBICourse\AirbnbProjects\AB_NYC_2019.csv"),[Delimiter=",", Columns=16, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Types" = Table.TransformColumnTypes(#"Promoted Headers",{
+				        {"id", Int64.Type}, {"name", type text}, {"host_id", Int64.Type},
+				        {"host_name", type text}, {"neighbourhood_group", type text},
+				        {"neighbourhood", type text}, {"latitude", type number},
+				        {"longitude", type number}, {"room_type", type text},
+				        {"price", Int64.Type}, {"minimum_nights", Int64.Type},
+				        {"number_of_reviews", Int64.Type}, {"last_review", type date},
+				        {"reviews_per_month", type number},
+				        {"calculated_host_listings_count", Int64.Type},
+				        {"availability_365", Int64.Type}
+				    }),
+				    #"Removed Errors" = Table.RemoveRowsWithErrors(#"Changed Types", {"id"}),
+				    #"Filtered Nulls" = Table.SelectRows(#"Removed Errors", each [id] <> null),
+				    DimNeighbourhood = let
+				        S2 = Csv.Document(File.Contents("C:\Users\Santiago\OneDrive\Courses\PowerBICourse\AirbnbProjects\AB_NYC_2019.csv"),[Delimiter=",", Columns=16, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				        H2 = Table.PromoteHeaders(S2, [PromoteAllScalars=true]),
+				        Sel = Table.SelectColumns(H2, {"neighbourhood", "neighbourhood_group"}),
+				        Dedup = Table.Distinct(Sel, {"neighbourhood"}),
+				        Sorted = Table.Sort(Dedup, {{"neighbourhood_group", Order.Ascending}, {"neighbourhood", Order.Ascending}}),
+				        Idx = Table.AddIndexColumn(Sorted, "neighbourhood_id", 1, 1, Int64.Type)
+				    in Idx,
+				    DimRoomType = let
+				        S3 = Csv.Document(File.Contents("C:\Users\Santiago\OneDrive\Courses\PowerBICourse\AirbnbProjects\AB_NYC_2019.csv"),[Delimiter=",", Columns=16, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				        H3 = Table.PromoteHeaders(S3, [PromoteAllScalars=true]),
+				        Sel = Table.SelectColumns(H3, {"room_type"}),
+				        Dedup = Table.Distinct(Sel),
+				        Sorted = Table.Sort(Dedup, {{"room_type", Order.Ascending}}),
+				        Idx = Table.AddIndexColumn(Sorted, "room_type_id", 1, 1, Int64.Type)
+				    in Idx,
+				    #"Merged Neighbourhood" = Table.NestedJoin(#"Filtered Nulls", {"neighbourhood"}, DimNeighbourhood, {"neighbourhood"}, "_nb", 0),
+				    #"Expanded Neighbourhood" = Table.ExpandTableColumn(#"Merged Neighbourhood", "_nb", {"neighbourhood_id"}),
+				    #"Merged RoomType" = Table.NestedJoin(#"Expanded Neighbourhood", {"room_type"}, DimRoomType, {"room_type"}, "_rt", 0),
+				    #"Expanded RoomType" = Table.ExpandTableColumn(#"Merged RoomType", "_rt", {"room_type_id"}),
+				    #"Selected Columns" = Table.SelectColumns(#"Expanded RoomType", {
+				        "id", "name", "host_id", "neighbourhood_id", "room_type_id",
+				        "latitude", "longitude", "price", "minimum_nights",
+				        "number_of_reviews", "last_review", "reviews_per_month",
+				        "calculated_host_listings_count", "availability_365"
+				    }),
+				    #"Renamed id" = Table.RenameColumns(#"Selected Columns", {{"id", "listing_id"}})
+				in
+				    #"Renamed id"
+

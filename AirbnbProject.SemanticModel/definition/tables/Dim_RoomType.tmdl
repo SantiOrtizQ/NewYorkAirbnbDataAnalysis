@@ -1,0 +1,28 @@
+table Dim_RoomType
+	lineageTag: 6e3a627b-5e42-4eba-99f1-e50e059a977b
+
+	column room_type_id
+		dataType: int64
+		isKey
+		lineageTag: f1c6ff4e-9d57-4633-b17f-626f4b8d728c
+		sourceColumn: room_type_id
+
+	column room_type
+		dataType: string
+		lineageTag: 2bf0fb9a-9cb1-4e6b-be8f-09612c92f4be
+		sourceColumn: room_type
+
+	partition Dim_RoomType = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\Santiago\OneDrive\Courses\PowerBICourse\AirbnbProjects\AB_NYC_2019.csv"),[Delimiter=",", Columns=16, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Selected Columns" = Table.SelectColumns(#"Promoted Headers", {"room_type"}),
+				    #"Removed Duplicates" = Table.Distinct(#"Selected Columns"),
+				    #"Sorted" = Table.Sort(#"Removed Duplicates", {{"room_type", Order.Ascending}}),
+				    #"Added Index" = Table.AddIndexColumn(#"Sorted", "room_type_id", 1, 1, Int64.Type),
+				    #"Reordered" = Table.ReorderColumns(#"Added Index", {"room_type_id", "room_type"})
+				in
+				    #"Reordered"
+

@@ -1,0 +1,12 @@
+relationship Fact_Listings_host_id_Dim_Host_host_id
+	fromColumn: Fact_Listings.host_id
+	toColumn: Dim_Host.host_id
+
+relationship Fact_Listings_neighbourhood_id_Dim_Neighbourhood_neighbourhood_id
+	fromColumn: Fact_Listings.neighbourhood_id
+	toColumn: Dim_Neighbourhood.neighbourhood_id
+
+relationship Fact_Listings_room_type_id_Dim_RoomType_room_type_id
+	fromColumn: Fact_Listings.room_type_id
+	toColumn: Dim_RoomType.room_type_id
+
