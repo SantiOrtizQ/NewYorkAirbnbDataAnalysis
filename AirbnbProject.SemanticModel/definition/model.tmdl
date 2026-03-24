@@ -10,7 +10,7 @@ annotation __PBI_TimeIntelligenceEnabled = 0
 
 annotation PBI_ProTooling = ["DevMode","MCP-PBIModeling"]
 
-annotation PBI_QueryOrder = ["AB_NYC_2019"]
+annotation PBI_QueryOrder = ["Dim_Host","Dim_Neighbourhood","Dim_RoomType","Fact_Listings"]
 
 ref table Dim_Host
 ref table Dim_Neighbourhood

@@ -29,7 +29,14 @@ table Dim_Neighbourhood
 				    #"Removed Duplicates" = Table.Distinct(#"Selected Columns", {"neighbourhood"}),
 				    #"Sorted" = Table.Sort(#"Removed Duplicates", {{"neighbourhood_group", Order.Ascending}, {"neighbourhood", Order.Ascending}}),
 				    #"Added Index" = Table.AddIndexColumn(#"Sorted", "neighbourhood_id", 1, 1, Int64.Type),
-				    #"Reordered" = Table.ReorderColumns(#"Added Index", {"neighbourhood_id", "neighbourhood", "neighbourhood_group"})
+				    #"Reordered" = Table.ReorderColumns(#"Added Index", {"neighbourhood_id", "neighbourhood", "neighbourhood_group"}),
+				    #"Filtered Rows" = Table.SelectRows(Reordered, each not Text.Contains([neighbourhood], "40")),
+				    #"Filtered Rows1" = Table.SelectRows(#"Filtered Rows", each [neighbourhood_group] <> "197400421"),
+				    #"Filtered Rows2" = Table.SelectRows(#"Filtered Rows1", each [neighbourhood] <> null and [neighbourhood] <> "")
 				in
-				    #"Reordered"
+				    #"Filtered Rows2"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
 

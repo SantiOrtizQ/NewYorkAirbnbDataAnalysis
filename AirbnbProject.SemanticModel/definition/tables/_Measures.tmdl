@@ -5,110 +5,132 @@ table _Measures
 	measure 'Total Listings' = COUNTROWS(Fact_Listings)
 		formatString: #,0
 		displayFolder: 📊 Volume
+		lineageTag: 756bfda1-1c4c-4386-a71d-60b2d0120599
 
 	/// Total number of unique hosts
 	measure 'Total Hosts' = DISTINCTCOUNT(Fact_Listings[host_id])
 		formatString: #,0
 		displayFolder: 📊 Volume
+		lineageTag: 82f4ed16-7816-45c3-959e-79d42850937d
 
 	/// Average nightly price per listing
 	measure 'Average Price' = AVERAGE(Fact_Listings[price])
 		formatString: $#,0.00
 		displayFolder: 💰 Pricing
+		lineageTag: 7f8a7f41-b205-4ab8-bd2a-eb1b9a136b03
 
 	/// Median nightly price per listing
 	measure 'Median Price' = MEDIANX(Fact_Listings, Fact_Listings[price])
 		formatString: $#,0.00
 		displayFolder: 💰 Pricing
+		lineageTag: e53dcf97-25ae-455e-b69d-454f2faf1d4a
 
 	/// Estimated total revenue potential (price x availability days)
 	measure 'Total Revenue Potential' = SUMX(Fact_Listings, Fact_Listings[price] * Fact_Listings[availability_365])
 		formatString: $#,,,0,,"M"
 		displayFolder: 💰 Pricing
+		lineageTag: 46be5c6d-d056-4580-8d07-e866fe7bd7db
 
 	/// Average number of available days per year
 	measure 'Average Availability (Days)' = AVERAGE(Fact_Listings[availability_365])
 		formatString: #,0.0
 		displayFolder: 📅 Availability & Booking
+		lineageTag: 3fb2cc4d-83d3-4228-a35a-3d9c59ce2c8e
 
 	/// Average minimum nights required per booking
 	measure 'Average Minimum Nights' = AVERAGE(Fact_Listings[minimum_nights])
 		formatString: #,0.0
 		displayFolder: 📅 Availability & Booking
+		lineageTag: 08d4b355-0435-4276-9087-b7674b00a7cd
 
 	/// Total number of reviews across all listings
 	measure 'Total Reviews' = SUM(Fact_Listings[number_of_reviews])
 		formatString: #,0
 		displayFolder: 📊 Volume
+		lineageTag: 8bfd14c3-dd30-4d87-83ae-80aeecd04116
 
 	/// Average number of reviews per listing
 	measure 'Average Reviews per Listing' = AVERAGE(Fact_Listings[number_of_reviews])
 		formatString: #,0.0
 		displayFolder: ⭐ Reviews
+		lineageTag: dfc7ce5d-1000-4c2f-95e3-43f78c52185a
 
 	/// Average reviews received per month
 	measure 'Average Reviews per Month' = AVERAGE(Fact_Listings[reviews_per_month])
 		formatString: #,0.00
 		displayFolder: ⭐ Reviews
+		lineageTag: 058be70e-72cb-4f8b-b1c3-fd1edf5b0ea3
 
 	/// Percentage of listings that have at least one review
 	measure 'Listings with Reviews %' = DIVIDE(COUNTROWS(FILTER(Fact_Listings, Fact_Listings[number_of_reviews] > 0)), COUNTROWS(Fact_Listings))
 		formatString: 0.0%
 		displayFolder: ⭐ Reviews
+		lineageTag: 97fb0b77-582f-40a5-b605-527246525588
 
 	/// Listings available for 180 or more days per year
 	measure 'High Availability Listings' = COUNTROWS(FILTER(Fact_Listings, Fact_Listings[availability_365] >= 180))
 		formatString: #,0
 		displayFolder: 📊 Volume
+		lineageTag: 160cbcd7-dd03-4571-960f-5c3e1a9005cc
 
 	/// Average number of listings per host
 	measure 'Average Host Listings Count' = AVERAGE(Fact_Listings[calculated_host_listings_count])
 		formatString: #,0.0
 		displayFolder: 🏠 Hosts
+		lineageTag: 30980c6b-acc3-4984-bfa8-1674715f2012
 
 	/// Number of hosts with more than one listing
 	measure 'Multi-Listing Hosts' = COUNTROWS(FILTER(VALUES(Fact_Listings[host_id]), CALCULATE(MAX(Fact_Listings[calculated_host_listings_count])) > 1))
 		formatString: #,0
 		displayFolder: 📊 Volume
+		lineageTag: 2171f763-7b3d-4ec7-b1e7-942b01a0e825
 
 	/// Average potential revenue per available day
 	measure 'Price per Availability Day' = DIVIDE([Total Revenue Potential], SUMX(Fact_Listings, Fact_Listings[availability_365]))
 		formatString: $#,0.00
 		displayFolder: 💰 Pricing
+		lineageTag: 49a00e70-ff3a-45c5-a1f1-31ebffcdc081
 
 	/// Share of listings that are entire homes/apts
 	measure '% Entire Home' = DIVIDE(CALCULATE([Total Listings], Dim_RoomType[room_type] = "Entire home/apt"), [Total Listings])
 		formatString: 0.0%
 		displayFolder: 📊 Volume
+		lineageTag: 1df70eb6-9462-4d22-b8a4-36e95ba145f8
 
 	/// Share of listings that are private rooms
 	measure '% Private Room' = DIVIDE(CALCULATE([Total Listings], Dim_RoomType[room_type] = "Private room"), [Total Listings])
 		formatString: 0.0%
 		displayFolder: 📊 Volume
+		lineageTag: bd5ac694-c5fd-4f22-869c-deb9c884c7de
 
 	/// Average price for entire home/apt listings
 	measure 'Avg Price - Entire Home' = CALCULATE([Average Price], Dim_RoomType[room_type] = "Entire home/apt")
 		formatString: $#,0.00
 		displayFolder: 💰 Pricing
+		lineageTag: 3fb5a8a4-da39-4cbc-a09a-f4dca66da083
 
 	/// Average price for private room listings
 	measure 'Avg Price - Private Room' = CALCULATE([Average Price], Dim_RoomType[room_type] = "Private room")
 		formatString: $#,0.00
 		displayFolder: 💰 Pricing
+		lineageTag: ff59b33d-5fe6-45b2-8d8d-abeaad9d2c9a
 
 	/// Estimated occupancy rate proxy: (365 - avg availability) / 365
 	measure 'Occupancy Rate Proxy' = DIVIDE(365 - [Average Availability (Days)], 365)
 		formatString: 0.0%
 		displayFolder: 📅 Availability & Booking
+		lineageTag: d21b32f0-595c-4233-bd62-d777165d5efe
 
 	/// Average revenue potential per listing
 	measure 'Revenue Potential per Listing' = DIVIDE([Total Revenue Potential], [Total Listings])
 		formatString: $#,0
 		displayFolder: 💰 Pricing
+		lineageTag: fec7e3f6-d021-4e07-88df-a36871dc8f17
 
 	/// Neighbourhood with the most listings
 	measure 'Top Neighbourhood by Listings' = TOPN(1, VALUES(Dim_Neighbourhood[neighbourhood]), CALCULATE([Total Listings]), DESC)
 		displayFolder: 📊 Volume
+		lineageTag: 411ae261-d22d-4db1-86a3-13e0f17ddd8c
 
 	column Placeholder
 		lineageTag: d358c859-40ca-43c5-ba21-ff8003b1e9dd

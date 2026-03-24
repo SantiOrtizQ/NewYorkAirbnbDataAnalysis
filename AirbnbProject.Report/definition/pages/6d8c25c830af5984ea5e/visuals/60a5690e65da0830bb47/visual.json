@@ -1,0 +1,77 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "60a5690e65da0830bb47",
+  "position": {
+    "x": 8,
+    "y": 368,
+    "z": 2000,
+    "height": 152,
+    "width": 184,
+    "tabOrder": 2000
+  },
+  "visual": {
+    "visualType": "slicer",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_RoomType"
+                    }
+                  },
+                  "Property": "room_type"
+                }
+              },
+              "queryRef": "Dim_RoomType.room_type",
+              "nativeQueryRef": "room_type",
+              "active": true
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "data": [
+        {
+          "properties": {
+            "mode": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Basic'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {}
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "48e5a84cb257be215fbc",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Dim_RoomType"
+              }
+            },
+            "Property": "room_type"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

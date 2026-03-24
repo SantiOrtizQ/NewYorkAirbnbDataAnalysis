@@ -56,8 +56,14 @@ table Fact_Listings
 
 	column last_review
 		dataType: dateTime
+		formatString: Long Date
 		lineageTag: 8f97bee2-518d-4cda-aa5f-917f4d7f66dd
+		summarizeBy: none
 		sourceColumn: last_review
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation SummarizationSetBy = Automatic
 
 	column reviews_per_month
 		dataType: double

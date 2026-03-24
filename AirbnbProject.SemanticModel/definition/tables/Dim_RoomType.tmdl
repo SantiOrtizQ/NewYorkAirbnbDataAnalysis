@@ -22,7 +22,12 @@ table Dim_RoomType
 				    #"Removed Duplicates" = Table.Distinct(#"Selected Columns"),
 				    #"Sorted" = Table.Sort(#"Removed Duplicates", {{"room_type", Order.Ascending}}),
 				    #"Added Index" = Table.AddIndexColumn(#"Sorted", "room_type_id", 1, 1, Int64.Type),
-				    #"Reordered" = Table.ReorderColumns(#"Added Index", {"room_type_id", "room_type"})
+				    #"Reordered" = Table.ReorderColumns(#"Added Index", {"room_type_id", "room_type"}),
+				    #"Filtered Rows" = Table.SelectRows(Reordered, each ([room_type] = "Entire home/apt" or [room_type] = "Private room" or [room_type] = "Shared room"))
 				in
-				    #"Reordered"
+				    #"Filtered Rows"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
 
