@@ -4,10 +4,10 @@
   "position": {
     "x": 8,
     "y": 80,
-    "z": 1000,
-    "height": 280,
+    "z": 0,
+    "height": 240,
     "width": 184,
-    "tabOrder": 1000
+    "tabOrder": 0
   },
   "visual": {
     "visualType": "slicer",
@@ -157,21 +157,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "a1d40f2f9030abe3aed0",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Dim_Neighbourhood"
-              }
-            },
-            "Property": "neighbourhood"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "e09e0708e3f4d91230cd",
+        "name": "ba0040411c8e3452ae76",
         "field": {
           "Column": {
             "Expression": {
@@ -180,6 +166,20 @@
               }
             },
             "Property": "neighbourhood_group"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "6ad72fc09df563958cc6",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Dim_Neighbourhood"
+              }
+            },
+            "Property": "neighbourhood"
           }
         },
         "type": "Categorical"

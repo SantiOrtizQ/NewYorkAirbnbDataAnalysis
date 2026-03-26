@@ -1,0 +1,118 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "567b68c2556331562445",
+  "position": {
+    "x": 800,
+    "y": 472,
+    "z": 6003,
+    "height": 232,
+    "width": 472,
+    "tabOrder": 6003
+  },
+  "visual": {
+    "visualType": "treemap",
+    "query": {
+      "queryState": {
+        "Group": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_Neighbourhood"
+                    }
+                  },
+                  "Property": "neighbourhood_group"
+                }
+              },
+              "queryRef": "Dim_Neighbourhood.neighbourhood_group",
+              "nativeQueryRef": "neighbourhood_group",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_RoomType"
+                    }
+                  },
+                  "Property": "room_type"
+                }
+              },
+              "queryRef": "Dim_RoomType.room_type",
+              "nativeQueryRef": "room_type",
+              "active": false
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Total Revenue Potential"
+                }
+              },
+              "queryRef": "_Measures.Total Revenue Potential",
+              "nativeQueryRef": "Total Revenue Potential"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "bb092a30c4e8cef05fff",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Dim_RoomType"
+              }
+            },
+            "Property": "room_type"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "ef2b84f97959956462b9",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "Total Revenue Potential"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "e519066298a9546c3490",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Dim_Neighbourhood"
+              }
+            },
+            "Property": "neighbourhood_group"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

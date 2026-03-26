@@ -27,7 +27,7 @@ table _Measures
 
 	/// Estimated total revenue potential (price x availability days)
 	measure 'Total Revenue Potential' = SUMX(Fact_Listings, Fact_Listings[price] * Fact_Listings[availability_365])
-		formatString: $#,,,0,,"M"
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
 		displayFolder: 💰 Pricing
 		lineageTag: 46be5c6d-d056-4580-8d07-e866fe7bd7db
 

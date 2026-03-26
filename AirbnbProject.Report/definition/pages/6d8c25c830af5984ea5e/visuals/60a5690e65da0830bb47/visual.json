@@ -3,11 +3,11 @@
   "name": "60a5690e65da0830bb47",
   "position": {
     "x": 8,
-    "y": 368,
-    "z": 2000,
-    "height": 152,
+    "y": 328,
+    "z": 1000,
+    "height": 128,
     "width": 184,
-    "tabOrder": 2000
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "slicer",
@@ -59,7 +59,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "48e5a84cb257be215fbc",
+        "name": "0b967b39ffbc300d1817",
         "field": {
           "Column": {
             "Expression": {

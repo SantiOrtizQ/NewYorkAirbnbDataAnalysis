@@ -125,7 +125,13 @@ table Fact_Listings
 				        "number_of_reviews", "last_review", "reviews_per_month",
 				        "calculated_host_listings_count", "availability_365"
 				    }),
-				    #"Renamed id" = Table.RenameColumns(#"Selected Columns", {{"id", "listing_id"}})
+				    #"Renamed id" = Table.RenameColumns(#"Selected Columns", {{"id", "listing_id"}}),
+				    #"Filtered Rows" = Table.SelectRows(#"Renamed id", each [host_id] <> null and [host_id] <> ""),
+				    #"Filtered Rows1" = Table.SelectRows(#"Filtered Rows", each [last_review] <> null and [last_review] <> "")
 				in
-				    #"Renamed id"
+				    #"Filtered Rows1"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
 
