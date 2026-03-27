@@ -4,10 +4,10 @@
   "position": {
     "x": 208,
     "y": 80,
-    "z": 6001,
+    "z": 7000,
     "height": 120,
     "width": 1064,
-    "tabOrder": 6001
+    "tabOrder": 7000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -98,7 +98,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "46906cb4324e433d3aba",
+        "name": "053fcfbca3314a0323c3",
         "field": {
           "Measure": {
             "Expression": {
@@ -112,7 +112,7 @@
         "type": "Advanced"
       },
       {
-        "name": "850867689dd4f65ab677",
+        "name": "6682d3dd4d9c26b4ddf4",
         "field": {
           "Measure": {
             "Expression": {
@@ -126,7 +126,7 @@
         "type": "Advanced"
       },
       {
-        "name": "ec783dee5754867d20f8",
+        "name": "8c840cc7b0be14a2b20c",
         "field": {
           "Measure": {
             "Expression": {
@@ -140,7 +140,7 @@
         "type": "Advanced"
       },
       {
-        "name": "14f22986c60a6da1a4cf",
+        "name": "f804b6e1d4acce4bdf26",
         "field": {
           "Measure": {
             "Expression": {

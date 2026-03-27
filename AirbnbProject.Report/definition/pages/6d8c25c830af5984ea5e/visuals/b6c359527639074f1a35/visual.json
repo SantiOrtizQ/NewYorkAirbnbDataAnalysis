@@ -1,16 +1,16 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
-  "name": "000bae40eb68a8bae5df",
+  "name": "b6c359527639074f1a35",
   "position": {
-    "x": 584,
+    "x": 208,
     "y": 208,
-    "z": 6000,
+    "z": 9001,
     "height": 256,
-    "width": 344,
-    "tabOrder": 6000
+    "width": 368,
+    "tabOrder": 9001
   },
   "visual": {
-    "visualType": "donutChart",
+    "visualType": "clusteredBarChart",
     "query": {
       "queryState": {
         "Category": {
@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Dim_RoomType"
+                      "Entity": "Dim_Neighbourhood"
                     }
                   },
-                  "Property": "room_type"
+                  "Property": "neighbourhood_group"
                 }
               },
-              "queryRef": "Dim_RoomType.room_type",
-              "nativeQueryRef": "room_type",
+              "queryRef": "Dim_Neighbourhood.neighbourhood_group",
+              "nativeQueryRef": "neighbourhood_group",
               "active": true
             }
           ]
@@ -70,6 +70,60 @@
         "isDefaultSort": true
       }
     },
+    "objects": {
+      "labels": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "1L"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "54599afcda58984d284a",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Dim_Neighbourhood"
+              }
+            },
+            "Property": "neighbourhood_group"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "92bee9b65269edb52edd",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "Total Listings"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

@@ -4,10 +4,10 @@
   "position": {
     "x": 800,
     "y": 472,
-    "z": 6003,
+    "z": 9000,
     "height": 232,
     "width": 472,
-    "tabOrder": 6003
+    "tabOrder": 9000
   },
   "visual": {
     "visualType": "treemap",
@@ -68,51 +68,5 @@
       }
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "bb092a30c4e8cef05fff",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Dim_RoomType"
-              }
-            },
-            "Property": "room_type"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "ef2b84f97959956462b9",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Measures"
-              }
-            },
-            "Property": "Total Revenue Potential"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "e519066298a9546c3490",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Dim_Neighbourhood"
-              }
-            },
-            "Property": "neighbourhood_group"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

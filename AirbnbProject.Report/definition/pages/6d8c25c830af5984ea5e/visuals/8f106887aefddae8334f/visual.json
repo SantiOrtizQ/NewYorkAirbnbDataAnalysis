@@ -199,34 +199,6 @@
           ]
         },
         "howCreated": "User"
-      },
-      {
-        "name": "b8ef4b6db9038fa59be5",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Fact_Listings"
-              }
-            },
-            "Property": "latitude"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "db8157e81f2509037072",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Fact_Listings"
-              }
-            },
-            "Property": "longitude"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

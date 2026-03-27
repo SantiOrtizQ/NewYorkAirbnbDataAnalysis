@@ -55,23 +55,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "0b967b39ffbc300d1817",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Dim_RoomType"
-              }
-            },
-            "Property": "room_type"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }
