@@ -1,16 +1,16 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
-  "name": "e732cc1555279f0ee720",
+  "name": "35110ccae2c6562afa95",
   "position": {
-    "x": 208,
-    "y": 472,
-    "z": 8000,
-    "height": 232,
-    "width": 584,
-    "tabOrder": 8000
+    "x": 776,
+    "y": 248,
+    "z": 4003,
+    "height": 240,
+    "width": 496,
+    "tabOrder": 4003
   },
   "visual": {
-    "visualType": "lineClusteredColumnComboChart",
+    "visualType": "clusteredBarChart",
     "query": {
       "queryState": {
         "Category": {
@@ -42,24 +42,6 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "Total Revenue Potential"
-                }
-              },
-              "queryRef": "_Measures.Total Revenue Potential",
-              "nativeQueryRef": "Total Revenue Potential"
-            }
-          ]
-        },
-        "Y2": {
-          "projections": [
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "_Measures"
-                    }
-                  },
                   "Property": "Average Price"
                 }
               },
@@ -79,7 +61,7 @@
                     "Entity": "_Measures"
                   }
                 },
-                "Property": "Total Revenue Potential"
+                "Property": "Average Price"
               }
             },
             "direction": "Descending"
@@ -89,87 +71,13 @@
       }
     },
     "objects": {
-      "valueAxis": [
-        {
-          "properties": {
-            "secShow": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "secLabelDisplayUnits": {
-              "expr": {
-                "Literal": {
-                  "Value": "0D"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "legend": [
+      "labels": [
         {
           "properties": {
             "show": {
               "expr": {
                 "Literal": {
                   "Value": "true"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "categoryAxis": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "concatenateLabels": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "showAxisTitle": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "lineStyles": [
-        {
-          "properties": {
-            "strokeShow": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "strokeLineJoin": {
-              "expr": {
-                "Literal": {
-                  "Value": "'round'"
-                }
-              }
-            },
-            "lineStyle": {
-              "expr": {
-                "Literal": {
-                  "Value": "'solid'"
                 }
               }
             }
@@ -182,8 +90,35 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "01fca233cffdf9e74e11",
-        "ordinal": 0,
+        "name": "4dd2deb3b245336ffb11",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Dim_Neighbourhood"
+              }
+            },
+            "Property": "neighbourhood"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "ed2e4ac21412bf5b370f",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "Average Price"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "9a1d16585915c6ca579a",
         "field": {
           "Column": {
             "Expression": {
@@ -239,12 +174,12 @@
                                 "Source": "_"
                               }
                             },
-                            "Property": "Total Revenue Potential"
+                            "Property": "Average Price"
                           }
                         }
                       }
                     ],
-                    "Top": 10
+                    "Top": 15
                   }
                 }
               },
@@ -281,9 +216,9 @@
               }
             }
           ]
-        }
+        },
+        "howCreated": "User"
       }
-    ],
-    "filterSortOrder": "Custom"
+    ]
   }
 }

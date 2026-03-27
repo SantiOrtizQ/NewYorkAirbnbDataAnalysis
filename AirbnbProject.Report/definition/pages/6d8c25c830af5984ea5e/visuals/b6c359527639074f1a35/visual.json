@@ -4,10 +4,10 @@
   "position": {
     "x": 208,
     "y": 208,
-    "z": 9001,
+    "z": 10000,
     "height": 256,
     "width": 368,
-    "tabOrder": 9001
+    "tabOrder": 10000
   },
   "visual": {
     "visualType": "clusteredBarChart",
@@ -93,37 +93,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "54599afcda58984d284a",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Dim_Neighbourhood"
-              }
-            },
-            "Property": "neighbourhood_group"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "92bee9b65269edb52edd",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Measures"
-              }
-            },
-            "Property": "Total Listings"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }
