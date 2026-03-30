@@ -4,10 +4,10 @@
   "position": {
     "x": 776,
     "y": 496,
-    "z": 4005,
+    "z": 9000,
     "height": 208,
     "width": 496,
-    "tabOrder": 4005
+    "tabOrder": 9000
   },
   "visual": {
     "visualType": "hundredPercentStackedBarChart",
@@ -99,56 +99,5 @@
       }
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "bbb0fbe4683d2e7ddc0b",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Dim_Neighbourhood"
-              }
-            },
-            "Property": "neighbourhood_group"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "f198702d08b15287cbd0",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Dim_RoomType"
-              }
-            },
-            "Property": "room_type"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "1b20a732ff25d5c3a25e",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Fact_Listings"
-                  }
-                },
-                "Property": "room_type_id"
-              }
-            },
-            "Function": 5
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

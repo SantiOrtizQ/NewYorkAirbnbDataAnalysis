@@ -1,0 +1,139 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "e92ce43a681e690d29d4",
+  "position": {
+    "x": 8,
+    "y": 0,
+    "z": 0,
+    "height": 40,
+    "width": 280,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": {
+                      "propertyIdentifier": {
+                        "objectName": "values",
+                        "propertyName": "expr"
+                      },
+                      "selector": {
+                        "id": "Value"
+                      }
+                    },
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "14pt"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {
+            "expr": {
+              "expr": {
+                "Min": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "Subquery": {
+                          "Query": {
+                            "Version": 2,
+                            "From": [
+                              {
+                                "Name": "d",
+                                "Entity": "Dim_Neighbourhood",
+                                "Type": 0
+                              },
+                              {
+                                "Name": "f",
+                                "Entity": "Fact_Listings",
+                                "Type": 0
+                              }
+                            ],
+                            "Select": [
+                              {
+                                "Column": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "d"
+                                    }
+                                  },
+                                  "Property": "neighbourhood"
+                                },
+                                "Name": "Dim_Neighbourhood.neighbourhood"
+                              },
+                              {
+                                "Column": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "f"
+                                    }
+                                  },
+                                  "Property": "name"
+                                },
+                                "Name": "Fact_Listings.name"
+                              }
+                            ],
+                            "Where": [
+                              {
+                                "Condition": {
+                                  "Exists": {
+                                    "Expression": {
+                                      "SourceRef": {
+                                        "Source": "f"
+                                      }
+                                    }
+                                  }
+                                },
+                                "Target": [
+                                  {
+                                    "SourceRef": {
+                                      "Source": "d"
+                                    }
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      "Property": "Dim_Neighbourhood.neighbourhood"
+                    }
+                  },
+                  "IncludeAllTypes": 1
+                },
+                "Annotations": {
+                  "NaturalLanguage": {
+                    "version": 1,
+                    "kind": "NaturalLanguage",
+                    "annotation": {
+                      "name": "Value",
+                      "utterance": "=neighbourhood name"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "Value"
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -1,36 +1,18 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
-  "name": "69ff271de0a8b680cb97",
+  "name": "f8e4e5b17cc020169bea",
   "position": {
-    "x": 208,
-    "y": 248,
-    "z": 6000,
-    "height": 224,
-    "width": 560,
-    "tabOrder": 6000
+    "x": 624,
+    "y": 208,
+    "z": 7000,
+    "height": 248,
+    "width": 648,
+    "tabOrder": 7000
   },
   "visual": {
     "visualType": "scatterChart",
     "query": {
       "queryState": {
-        "Series": {
-          "projections": [
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Dim_RoomType"
-                    }
-                  },
-                  "Property": "room_type"
-                }
-              },
-              "queryRef": "Dim_RoomType.room_type",
-              "nativeQueryRef": "room_type"
-            }
-          ]
-        },
         "Size": {
           "projections": [
             {
@@ -41,11 +23,11 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "Total Listings"
+                  "Property": "Total Reviews"
                 }
               },
-              "queryRef": "_Measures.Total Listings",
-              "nativeQueryRef": "Total Listings"
+              "queryRef": "_Measures.Total Reviews",
+              "nativeQueryRef": "Total Reviews"
             }
           ]
         },
@@ -59,11 +41,11 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "Average Minimum Nights"
+                  "Property": "Total Listings per host"
                 }
               },
-              "queryRef": "_Measures.Average Minimum Nights",
-              "nativeQueryRef": "Average Minimum Nights",
+              "queryRef": "_Measures.Total Listings per host",
+              "nativeQueryRef": "Total Listings per host",
               "active": true
             }
           ]
@@ -87,6 +69,21 @@
           ]
         }
       }
+    },
+    "objects": {
+      "categoryLabels": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
     },
     "drillFilterOtherVisuals": true
   }

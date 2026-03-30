@@ -1,0 +1,75 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "13c13a5f3e394702d3be",
+  "position": {
+    "x": 720,
+    "y": 464,
+    "z": 9000,
+    "height": 240,
+    "width": 552,
+    "tabOrder": 9000
+  },
+  "visual": {
+    "visualType": "clusteredColumnChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_Neighbourhood"
+                    }
+                  },
+                  "Property": "neighbourhood_group"
+                }
+              },
+              "queryRef": "Dim_Neighbourhood.neighbourhood_group",
+              "nativeQueryRef": "neighbourhood_group",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Average Reviews per Month"
+                }
+              },
+              "queryRef": "_Measures.Average Reviews per Month",
+              "nativeQueryRef": "Average Reviews per Month"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "_Measures"
+                  }
+                },
+                "Property": "Average Reviews per Month"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
-  "name": "35110ccae2c6562afa95",
+  "name": "b27437ca9874a7cd46a4",
   "position": {
-    "x": 776,
-    "y": 248,
-    "z": 7000,
-    "height": 240,
-    "width": 496,
-    "tabOrder": 7000
+    "x": 208,
+    "y": 208,
+    "z": 6000,
+    "height": 248,
+    "width": 408,
+    "tabOrder": 6000
   },
   "visual": {
     "visualType": "clusteredBarChart",
@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Dim_Neighbourhood"
+                      "Entity": "Dim_Host"
                     }
                   },
-                  "Property": "neighbourhood"
+                  "Property": "host_name"
                 }
               },
-              "queryRef": "Dim_Neighbourhood.neighbourhood",
-              "nativeQueryRef": "neighbourhood",
+              "queryRef": "Dim_Host.host_name",
+              "nativeQueryRef": "host_name",
               "active": true
             }
           ]
@@ -42,11 +42,11 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "Average Price"
+                  "Property": "Total Listings"
                 }
               },
-              "queryRef": "_Measures.Average Price",
-              "nativeQueryRef": "Average Price"
+              "queryRef": "_Measures.Total Listings",
+              "nativeQueryRef": "Total Listings"
             }
           ]
         }
@@ -61,7 +61,7 @@
                     "Entity": "_Measures"
                   }
                 },
-                "Property": "Average Price"
+                "Property": "Total Listings"
               }
             },
             "direction": "Descending"
@@ -83,19 +83,64 @@
             }
           }
         }
-      ]
-    },
-    "visualContainerObjects": {
-      "visualTooltip": [
+      ],
+      "dataPoint": [
         {
           "properties": {
-            "section": {
-              "expr": {
-                "Literal": {
-                  "Value": "'9a48ce7b9b68100ac46c'"
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "FillRule": {
+                      "Input": {
+                        "Measure": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "_Measures"
+                            }
+                          },
+                          "Property": "Average Price"
+                        }
+                      },
+                      "FillRule": {
+                        "linearGradient2": {
+                          "min": {
+                            "color": {
+                              "Literal": {
+                                "Value": "'#118DFF'"
+                              }
+                            }
+                          },
+                          "max": {
+                            "color": {
+                              "Literal": {
+                                "Value": "'#FF0000'"
+                              }
+                            }
+                          },
+                          "nullColoringStrategy": {
+                            "strategy": {
+                              "Literal": {
+                                "Value": "'asZero'"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
                 }
               }
             }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ]
           }
         }
       ]
@@ -105,15 +150,15 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "9a1d16585915c6ca579a",
+        "name": "13d08e5a3007923238ff",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "Dim_Neighbourhood"
+                "Entity": "Dim_Host"
               }
             },
-            "Property": "neighbourhood"
+            "Property": "host_name"
           }
         },
         "type": "TopN",
@@ -129,7 +174,7 @@
                     "From": [
                       {
                         "Name": "d",
-                        "Entity": "Dim_Neighbourhood",
+                        "Entity": "Dim_Host",
                         "Type": 0
                       },
                       {
@@ -146,7 +191,7 @@
                               "Source": "d"
                             }
                           },
-                          "Property": "neighbourhood"
+                          "Property": "host_name"
                         },
                         "Name": "field"
                       }
@@ -161,12 +206,12 @@
                                 "Source": "_"
                               }
                             },
-                            "Property": "Average Price"
+                            "Property": "Total Listings"
                           }
                         }
                       }
                     ],
-                    "Top": 15
+                    "Top": 20
                   }
                 }
               },
@@ -174,7 +219,7 @@
             },
             {
               "Name": "d",
-              "Entity": "Dim_Neighbourhood",
+              "Entity": "Dim_Host",
               "Type": 0
             }
           ],
@@ -190,7 +235,7 @@
                             "Source": "d"
                           }
                         },
-                        "Property": "neighbourhood"
+                        "Property": "host_name"
                       }
                     }
                   ],
@@ -203,8 +248,7 @@
               }
             }
           ]
-        },
-        "howCreated": "User"
+        }
       }
     ]
   }

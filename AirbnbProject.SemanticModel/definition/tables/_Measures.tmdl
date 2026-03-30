@@ -132,6 +132,17 @@ table _Measures
 		displayFolder: 📊 Volume
 		lineageTag: 411ae261-d22d-4db1-86a3-13e0f17ddd8c
 
+	measure 'Total Listings per host' = DIVIDE([Total Listings], [Total Hosts], 0)
+		displayFolder: 📊 Volume
+		lineageTag: b7e5ad3f-08fd-4f4c-8135-cac7cfd9b9a1
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Single-Listing hosts' = [Total Hosts]-[Multi-Listing Hosts]
+		formatString: 0
+		displayFolder: 📊 Volume
+		lineageTag: ee7111e6-0836-47ef-90ae-2f01aba17878
+
 	column Placeholder
 		lineageTag: d358c859-40ca-43c5-ba21-ff8003b1e9dd
 		isNameInferred
