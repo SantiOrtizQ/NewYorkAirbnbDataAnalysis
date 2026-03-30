@@ -143,6 +143,9 @@ table _Measures
 		displayFolder: 📊 Volume
 		lineageTag: ee7111e6-0836-47ef-90ae-2f01aba17878
 
+	measure 'Borough Deep Dive Title' = "Specific Information - " & SELECTEDVALUE(Dim_Neighbourhood[neighbourhood_group])
+		lineageTag: 4ebe5cf3-2b44-489c-b10e-c1c44d19d115
+
 	column Placeholder
 		lineageTag: d358c859-40ca-43c5-ba21-ff8003b1e9dd
 		isNameInferred

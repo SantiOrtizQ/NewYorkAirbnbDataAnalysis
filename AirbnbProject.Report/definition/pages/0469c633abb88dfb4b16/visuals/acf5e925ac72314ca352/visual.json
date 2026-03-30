@@ -1,16 +1,16 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
-  "name": "b6c359527639074f1a35",
+  "name": "acf5e925ac72314ca352",
   "position": {
-    "x": 208,
-    "y": 208,
-    "z": 10000,
-    "height": 256,
-    "width": 368,
-    "tabOrder": 10000
+    "x": 216,
+    "y": 400,
+    "z": 4004,
+    "height": 304,
+    "width": 568,
+    "tabOrder": 4003
   },
   "visual": {
-    "visualType": "clusteredBarChart",
+    "visualType": "clusteredColumnChart",
     "query": {
       "queryState": {
         "Category": {
@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Dim_Neighbourhood"
+                      "Entity": "Dim_RoomType"
                     }
                   },
-                  "Property": "neighbourhood_group"
+                  "Property": "room_type"
                 }
               },
-              "queryRef": "Dim_Neighbourhood.neighbourhood_group",
-              "nativeQueryRef": "neighbourhood_group",
+              "queryRef": "Dim_RoomType.room_type",
+              "nativeQueryRef": "room_type",
               "active": true
             }
           ]
@@ -42,11 +42,11 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "Total Listings"
+                  "Property": "Average Price"
                 }
               },
-              "queryRef": "_Measures.Total Listings",
-              "nativeQueryRef": "Total Listings"
+              "queryRef": "_Measures.Average Price",
+              "nativeQueryRef": "Average Price"
             }
           ]
         }
@@ -61,7 +61,7 @@
                     "Entity": "_Measures"
                   }
                 },
-                "Property": "Total Listings"
+                "Property": "Average Price"
               }
             },
             "direction": "Descending"
@@ -81,10 +81,10 @@
                 }
               }
             },
-            "labelPrecision": {
+            "labelPosition": {
               "expr": {
                 "Literal": {
-                  "Value": "1L"
+                  "Value": "'InsideEnd'"
                 }
               }
             }
@@ -93,37 +93,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "9447ddd11854dbcf9b64",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Dim_Neighbourhood"
-              }
-            },
-            "Property": "neighbourhood_group"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "5f6660ef99cfaa7a2e89",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Measures"
-              }
-            },
-            "Property": "Total Listings"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }
