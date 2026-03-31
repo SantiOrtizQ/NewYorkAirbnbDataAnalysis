@@ -1,12 +1,12 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
-  "name": "4ce8a2daba0b751997db",
+  "name": "5d7122ea979c497e7597",
   "position": {
-    "x": 224,
-    "y": 8,
+    "x": 0,
+    "y": 0,
     "z": 0,
-    "height": 64,
-    "width": 1040,
+    "height": 32,
+    "width": 320,
     "tabOrder": 0
   },
   "visual": {
@@ -25,13 +25,8 @@
                         "propertyName": "expr"
                       },
                       "selector": {
-                        "id": "Drillthrough Title"
+                        "id": "Host Name"
                       }
-                    },
-                    "textStyle": {
-                      "fontWeight": "bold",
-                      "fontSize": "28pt",
-                      "textDecoration": "underline"
                     }
                   }
                 ],
@@ -55,28 +50,43 @@
                             "Version": 2,
                             "From": [
                               {
-                                "Name": "_",
-                                "Entity": "_Measures",
+                                "Name": "d",
+                                "Entity": "Dim_Host",
                                 "Type": 0
                               }
                             ],
                             "Select": [
                               {
-                                "Measure": {
+                                "Column": {
                                   "Expression": {
                                     "SourceRef": {
-                                      "Source": "_"
+                                      "Source": "d"
                                     }
                                   },
-                                  "Property": "Borough Deep Dive Title"
+                                  "Property": "host_name"
                                 },
-                                "Name": "_Measures.Borough Deep Dive Title"
+                                "Name": "Dim_Host.host_name"
+                              }
+                            ],
+                            "OrderBy": [
+                              {
+                                "Direction": 1,
+                                "Expression": {
+                                  "Column": {
+                                    "Expression": {
+                                      "SourceRef": {
+                                        "Source": "d"
+                                      }
+                                    },
+                                    "Property": "host_name"
+                                  }
+                                }
                               }
                             ]
                           }
                         }
                       },
-                      "Property": "_Measures.Borough Deep Dive Title"
+                      "Property": "Dim_Host.host_name"
                     }
                   },
                   "IncludeAllTypes": 1
@@ -86,8 +96,8 @@
                     "version": 1,
                     "kind": "NaturalLanguage",
                     "annotation": {
-                      "name": "Drillthrough Title",
-                      "utterance": "=Borough Deep Dive Title"
+                      "name": "Host Name",
+                      "utterance": "host_name"
                     }
                   }
                 }
@@ -95,19 +105,19 @@
             }
           },
           "selector": {
-            "id": "Drillthrough Title"
+            "id": "Host Name"
           }
         }
       ]
     },
     "visualContainerObjects": {
-      "background": [
+      "border": [
         {
           "properties": {
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
                 }
               }
             }

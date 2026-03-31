@@ -4,10 +4,10 @@
   "position": {
     "x": 216,
     "y": 80,
-    "z": 4003,
+    "z": 3000,
     "height": 312,
     "width": 432,
-    "tabOrder": 4002
+    "tabOrder": 2000
   },
   "visual": {
     "visualType": "clusteredBarChart",
@@ -227,20 +227,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "c5bc1b1e36e6c47c6077",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Measures"
-              }
-            },
-            "Property": "Total Listings"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

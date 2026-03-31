@@ -1,9 +1,10 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.0.0/schema.json",
   "name": "9a48ce7b9b68100ac46c",
-  "displayName": "Tooltip 1",
+  "displayName": "Tooltip - Neighbourhood",
   "displayOption": "ActualSize",
   "height": 315,
   "width": 400,
+  "visibility": "HiddenInViewMode",
   "type": "Tooltip"
 }

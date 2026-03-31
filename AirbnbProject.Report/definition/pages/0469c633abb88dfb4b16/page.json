@@ -49,7 +49,7 @@
                     [
                       {
                         "Literal": {
-                          "Value": "'Manhattan'"
+                          "Value": "'Queens'"
                         }
                       }
                     ]
@@ -70,8 +70,6 @@
       {
         "name": "aa72ece757e9ddc5707e",
         "boundFilter": "61c5c3a267339bf123cf",
-        "asAggregation": false,
-        "qnaSingleSelectRequired": false,
         "fieldExpr": {
           "Column": {
             "Expression": {
@@ -126,5 +124,6 @@
         }
       }
     ]
-  }
+  },
+  "visibility": "HiddenInViewMode"
 }
