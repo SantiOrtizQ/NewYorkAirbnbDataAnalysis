@@ -1,0 +1,122 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "18ecd3ddef8d3be728dc",
+  "position": {
+    "x": 768,
+    "y": 368,
+    "z": 5000,
+    "height": 336,
+    "width": 496,
+    "tabOrder": 5000
+  },
+  "visual": {
+    "visualType": "scatterChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_Listings"
+                    }
+                  },
+                  "Property": "name"
+                }
+              },
+              "queryRef": "Fact_Listings.name",
+              "nativeQueryRef": "name",
+              "active": true
+            }
+          ]
+        },
+        "X": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Average Reviews per Month"
+                }
+              },
+              "queryRef": "_Measures.Average Reviews per Month",
+              "nativeQueryRef": "Average Reviews per Month",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Average Reviews per Listing"
+                }
+              },
+              "queryRef": "_Measures.Average Reviews per Listing",
+              "nativeQueryRef": "Average Reviews per Listing"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "b5ce93816fa9bb1172a5",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "Average Reviews per Month"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "49f3f6995438adbdf23a",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "Average Reviews per Listing"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "ad59e8b3fb65741a2fc2",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact_Listings"
+              }
+            },
+            "Property": "name"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

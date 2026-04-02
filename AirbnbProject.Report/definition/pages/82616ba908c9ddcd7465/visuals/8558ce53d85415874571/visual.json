@@ -1,38 +1,38 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
-  "name": "35110ccae2c6562afa95",
+  "name": "8558ce53d85415874571",
   "position": {
-    "x": 776,
-    "y": 248,
-    "z": 7000,
-    "height": 240,
-    "width": 496,
-    "tabOrder": 7000
+    "x": 560,
+    "y": 80,
+    "z": 4000,
+    "height": 296,
+    "width": 704,
+    "tabOrder": 4000
   },
   "visual": {
-    "visualType": "clusteredBarChart",
+    "visualType": "pivotTable",
     "query": {
       "queryState": {
-        "Category": {
+        "Rows": {
           "projections": [
             {
               "field": {
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Dim_Neighbourhood"
+                      "Entity": "Dim_Host"
                     }
                   },
-                  "Property": "neighbourhood"
+                  "Property": "host_name"
                 }
               },
-              "queryRef": "Dim_Neighbourhood.neighbourhood",
-              "nativeQueryRef": "neighbourhood",
+              "queryRef": "Dim_Host.host_name",
+              "nativeQueryRef": "host_name",
               "active": true
             }
           ]
         },
-        "Y": {
+        "Values": {
           "projections": [
             {
               "field": {
@@ -42,11 +42,25 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "Average Price"
+                  "Property": "Total Listings"
                 }
               },
-              "queryRef": "_Measures.Average Price",
-              "nativeQueryRef": "Average Price"
+              "queryRef": "_Measures.Total Listings",
+              "nativeQueryRef": "Total Listings"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Total Revenue Potential"
+                }
+              },
+              "queryRef": "_Measures.Total Revenue Potential",
+              "nativeQueryRef": "Total Revenue Potential"
             }
           ]
         }
@@ -61,38 +75,29 @@
                     "Entity": "_Measures"
                   }
                 },
-                "Property": "Average Price"
+                "Property": "Total Listings"
               }
             },
             "direction": "Descending"
           }
-        ],
-        "isDefaultSort": true
+        ]
       }
     },
     "objects": {
-      "labels": [
+      "subTotals": [
         {
           "properties": {
-            "show": {
+            "columnSubtotals": {
               "expr": {
                 "Literal": {
                   "Value": "true"
                 }
               }
-            }
-          }
-        }
-      ]
-    },
-    "visualContainerObjects": {
-      "visualTooltip": [
-        {
-          "properties": {
-            "section": {
+            },
+            "rowSubtotals": {
               "expr": {
                 "Literal": {
-                  "Value": "'9a48ce7b9b68100ac46c'"
+                  "Value": "false"
                 }
               }
             }
@@ -105,15 +110,15 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "9a1d16585915c6ca579a",
+        "name": "f61aa1953a96ddd08528",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "Dim_Neighbourhood"
+                "Entity": "Dim_Host"
               }
             },
-            "Property": "neighbourhood"
+            "Property": "host_name"
           }
         },
         "type": "TopN",
@@ -129,7 +134,7 @@
                     "From": [
                       {
                         "Name": "d",
-                        "Entity": "Dim_Neighbourhood",
+                        "Entity": "Dim_Host",
                         "Type": 0
                       },
                       {
@@ -146,7 +151,7 @@
                               "Source": "d"
                             }
                           },
-                          "Property": "neighbourhood"
+                          "Property": "host_name"
                         },
                         "Name": "field"
                       }
@@ -166,7 +171,7 @@
                         }
                       }
                     ],
-                    "Top": 15
+                    "Top": 10
                   }
                 }
               },
@@ -174,7 +179,7 @@
             },
             {
               "Name": "d",
-              "Entity": "Dim_Neighbourhood",
+              "Entity": "Dim_Host",
               "Type": 0
             }
           ],
@@ -190,7 +195,7 @@
                             "Source": "d"
                           }
                         },
-                        "Property": "neighbourhood"
+                        "Property": "host_name"
                       }
                     }
                   ],
