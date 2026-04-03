@@ -72,51 +72,5 @@
       }
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "b5ce93816fa9bb1172a5",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Measures"
-              }
-            },
-            "Property": "Average Reviews per Month"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "49f3f6995438adbdf23a",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Measures"
-              }
-            },
-            "Property": "Average Reviews per Listing"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "ad59e8b3fb65741a2fc2",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Fact_Listings"
-              }
-            },
-            "Property": "name"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

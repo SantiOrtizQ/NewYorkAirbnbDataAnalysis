@@ -203,37 +203,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "f0e9fd4f0cb090fbbfe9",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Fact_Listings"
-              }
-            },
-            "Property": "latitude"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "a23a84c9d57089d7bdd5",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Fact_Listings"
-              }
-            },
-            "Property": "longitude"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

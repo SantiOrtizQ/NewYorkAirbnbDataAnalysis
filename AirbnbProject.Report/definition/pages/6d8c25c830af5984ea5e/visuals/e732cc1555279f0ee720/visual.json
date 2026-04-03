@@ -105,6 +105,13 @@
                   "Value": "0D"
                 }
               }
+            },
+            "titleText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Revenue Potential'"
+                }
+              }
             }
           }
         }
@@ -185,6 +192,19 @@
               "expr": {
                 "Literal": {
                   "Value": "'9a48ce7b9b68100ac46c'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Total Revenue Potential and Average Price by Neighbourhood'"
                 }
               }
             }
