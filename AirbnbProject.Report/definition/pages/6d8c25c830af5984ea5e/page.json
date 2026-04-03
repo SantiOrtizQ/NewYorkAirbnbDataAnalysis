@@ -45,6 +45,11 @@
           }
         }
       }
+    ],
+    "outspacePane": [
+      {
+        "properties": {}
+      }
     ]
   },
   "visualInteractions": [

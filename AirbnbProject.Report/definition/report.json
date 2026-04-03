@@ -31,7 +31,14 @@
           "expanded": {
             "expr": {
               "Literal": {
-                "Value": "false"
+                "Value": "true"
+              }
+            }
+          },
+          "visible": {
+            "expr": {
+              "Literal": {
+                "Value": "true"
               }
             }
           }
@@ -61,6 +68,26 @@
         {
           "name": "Background3754761282231718.png",
           "path": "Background3754761282231718.png",
+          "type": "Image"
+        },
+        {
+          "name": "Money7094877840140252.png",
+          "path": "Money7094877840140252.png",
+          "type": "Image"
+        },
+        {
+          "name": "Host6542342655178602.png",
+          "path": "Host6542342655178602.png",
+          "type": "Image"
+        },
+        {
+          "name": "Listing7236779488870144.png",
+          "path": "Listing7236779488870144.png",
+          "type": "Image"
+        },
+        {
+          "name": "Occupancy29770344600363874.png",
+          "path": "Occupancy29770344600363874.png",
           "type": "Image"
         }
       ]

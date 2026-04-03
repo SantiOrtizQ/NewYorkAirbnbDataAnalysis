@@ -16,7 +16,7 @@ table Dim_Host
 		mode: import
 		source =
 				let
-				    Source = Csv.Document(File.Contents("C:\Users\Santiago\OneDrive\Courses\PowerBICourse\AirbnbProjects\AB_NYC_2019.csv"),[Delimiter=",", Columns=16, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    Source = Csv.Document(File.Contents("C:\Users\Santiago\OneDrive\Courses\-AirbnbProjects\AB_NYC_2019.csv"),[Delimiter=",", Columns=16, Encoding=1252, QuoteStyle=QuoteStyle.None]),
 				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
 				    #"Selected Columns" = Table.SelectColumns(#"Promoted Headers", {"host_id", "host_name"}),
 				    #"Changed Types" = Table.TransformColumnTypes(#"Selected Columns", {{"host_id", Int64.Type}, {"host_name", type text}}),
@@ -26,4 +26,8 @@ table Dim_Host
 				    #"Sorted" = Table.Sort(#"Removed Duplicates", {{"host_id", Order.Ascending}})
 				in
 				    #"Sorted"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
 
