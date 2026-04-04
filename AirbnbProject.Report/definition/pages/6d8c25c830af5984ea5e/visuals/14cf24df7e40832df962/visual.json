@@ -1,34 +1,33 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
-  "name": "e732cc1555279f0ee720",
+  "name": "14cf24df7e40832df962",
   "position": {
-    "x": 208,
-    "y": 464,
-    "z": 8000,
-    "height": 240,
-    "width": 432,
-    "tabOrder": 8000
+    "x": 992,
+    "y": 208,
+    "z": 11001,
+    "height": 496,
+    "width": 280,
+    "tabOrder": 11001
   },
   "visual": {
-    "visualType": "lineClusteredColumnComboChart",
+    "visualType": "azureMap",
     "query": {
       "queryState": {
-        "Category": {
+        "X": {
           "projections": [
             {
               "field": {
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Dim_Neighbourhood"
+                      "Entity": "Fact_Listings"
                     }
                   },
-                  "Property": "neighbourhood"
+                  "Property": "longitude"
                 }
               },
-              "queryRef": "Dim_Neighbourhood.neighbourhood",
-              "nativeQueryRef": "neighbourhood",
-              "active": true
+              "queryRef": "Fact_Listings.longitude",
+              "nativeQueryRef": "longitude"
             }
           ]
         },
@@ -36,147 +35,127 @@
           "projections": [
             {
               "field": {
-                "Measure": {
+                "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "_Measures"
+                      "Entity": "Fact_Listings"
                     }
                   },
-                  "Property": "Total Revenue Potential"
+                  "Property": "latitude"
                 }
               },
-              "queryRef": "_Measures.Total Revenue Potential",
-              "nativeQueryRef": "Total Revenue Potential"
-            }
-          ]
-        },
-        "Y2": {
-          "projections": [
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "_Measures"
-                    }
-                  },
-                  "Property": "Average Price"
-                }
-              },
-              "queryRef": "_Measures.Average Price",
-              "nativeQueryRef": "Average Price"
+              "queryRef": "Fact_Listings.latitude",
+              "nativeQueryRef": "latitude"
             }
           ]
         }
-      },
-      "sortDefinition": {
-        "sort": [
-          {
-            "field": {
-              "Measure": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "_Measures"
-                  }
-                },
-                "Property": "Total Revenue Potential"
-              }
-            },
-            "direction": "Descending"
-          }
-        ],
-        "isDefaultSort": true
       }
     },
     "objects": {
-      "valueAxis": [
+      "bubbleLayer": [
         {
           "properties": {
-            "secShow": {
+            "fillColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "FillRule": {
+                      "Input": {
+                        "Aggregation": {
+                          "Expression": {
+                            "Column": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "Fact_Listings"
+                                }
+                              },
+                              "Property": "longitude"
+                            }
+                          },
+                          "Function": 0
+                        }
+                      },
+                      "FillRule": {
+                        "linearGradient3": {
+                          "min": {
+                            "color": {
+                              "Literal": {
+                                "Value": "'#19DD36'"
+                              }
+                            }
+                          },
+                          "mid": {
+                            "color": {
+                              "Literal": {
+                                "Value": "'#FFD300'"
+                              }
+                            }
+                          },
+                          "max": {
+                            "color": {
+                              "Literal": {
+                                "Value": "'#D64550'"
+                              }
+                            }
+                          },
+                          "nullColoringStrategy": {
+                            "strategy": {
+                              "Literal": {
+                                "Value": "'asZero'"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "iconId": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "'Circle'"
                 }
               }
             },
-            "secLabelDisplayUnits": {
+            "bubbleRadius": {
               "expr": {
                 "Literal": {
-                  "Value": "0D"
-                }
-              }
-            },
-            "titleText": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Revenue Potential'"
+                  "Value": "10L"
                 }
               }
             }
           }
         }
       ],
-      "legend": [
+      "mapControls": [
         {
           "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "categoryAxis": [
-        {
-          "properties": {
-            "show": {
+            "worldWrap": {
               "expr": {
                 "Literal": {
                   "Value": "true"
                 }
               }
             },
-            "concatenateLabels": {
+            "showNavigationControls": {
               "expr": {
                 "Literal": {
                   "Value": "false"
-                }
-              }
-            },
-            "showAxisTitle": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "lineStyles": [
-        {
-          "properties": {
-            "strokeShow": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "strokeLineJoin": {
-              "expr": {
-                "Literal": {
-                  "Value": "'round'"
-                }
-              }
-            },
-            "lineStyle": {
-              "expr": {
-                "Literal": {
-                  "Value": "'solid'"
                 }
               }
             }
@@ -185,26 +164,13 @@
       ]
     },
     "visualContainerObjects": {
-      "visualTooltip": [
-        {
-          "properties": {
-            "section": {
-              "expr": {
-                "Literal": {
-                  "Value": "'9a48ce7b9b68100ac46c'"
-                }
-              }
-            }
-          }
-        }
-      ],
       "title": [
         {
           "properties": {
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Total Revenue Potential and Average Price by Neighbourhood'"
+                  "Value": "'Top Listings by Revenue'"
                 }
               }
             }
@@ -237,16 +203,43 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "01fca233cffdf9e74e11",
-        "ordinal": 0,
+        "name": "15369f3427a61a2ac1b8",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "Dim_Neighbourhood"
+                "Entity": "Fact_Listings"
               }
             },
-            "Property": "neighbourhood"
+            "Property": "longitude"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "bd6b971ee27ccd7af9d8",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact_Listings"
+              }
+            },
+            "Property": "latitude"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "8bb013058b58f92424b1",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact_Listings"
+              }
+            },
+            "Property": "name"
           }
         },
         "type": "TopN",
@@ -261,8 +254,8 @@
                     "Version": 2,
                     "From": [
                       {
-                        "Name": "d",
-                        "Entity": "Dim_Neighbourhood",
+                        "Name": "f",
+                        "Entity": "Fact_Listings",
                         "Type": 0
                       },
                       {
@@ -276,10 +269,10 @@
                         "Column": {
                           "Expression": {
                             "SourceRef": {
-                              "Source": "d"
+                              "Source": "f"
                             }
                           },
-                          "Property": "neighbourhood"
+                          "Property": "name"
                         },
                         "Name": "field"
                       }
@@ -299,15 +292,15 @@
                         }
                       }
                     ],
-                    "Top": 10
+                    "Top": 20
                   }
                 }
               },
               "Type": 2
             },
             {
-              "Name": "d",
-              "Entity": "Dim_Neighbourhood",
+              "Name": "f",
+              "Entity": "Fact_Listings",
               "Type": 0
             }
           ],
@@ -320,10 +313,10 @@
                       "Column": {
                         "Expression": {
                           "SourceRef": {
-                            "Source": "d"
+                            "Source": "f"
                           }
                         },
-                        "Property": "neighbourhood"
+                        "Property": "name"
                       }
                     }
                   ],
@@ -336,9 +329,9 @@
               }
             }
           ]
-        }
+        },
+        "howCreated": "User"
       }
-    ],
-    "filterSortOrder": "Custom"
+    ]
   }
 }
