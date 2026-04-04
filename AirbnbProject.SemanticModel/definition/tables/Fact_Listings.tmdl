@@ -41,6 +41,7 @@ table Fact_Listings
 
 	column price
 		dataType: int64
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
 		lineageTag: fd01d9d2-ae45-4432-8938-636944073004
 		sourceColumn: price
 

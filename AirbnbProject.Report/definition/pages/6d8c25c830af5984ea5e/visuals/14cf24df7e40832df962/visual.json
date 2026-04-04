@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "14cf24df7e40832df962",
   "position": {
     "x": 992,
@@ -13,6 +13,65 @@
     "visualType": "azureMap",
     "query": {
       "queryState": {
+        "Tooltips": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fact_Listings"
+                        }
+                      },
+                      "Property": "name"
+                    }
+                  },
+                  "Function": 3
+                }
+              },
+              "queryRef": "Min(Fact_Listings.name)",
+              "nativeQueryRef": "Name",
+              "displayName": "Name"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fact_Listings"
+                        }
+                      },
+                      "Property": "price"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Fact_Listings.price)",
+              "nativeQueryRef": "Price",
+              "displayName": "Price"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Total Revenue Potential"
+                }
+              },
+              "queryRef": "_Measures.Total Revenue Potential",
+              "nativeQueryRef": "Revenue Potential",
+              "displayName": "Revenue Potential"
+            }
+          ]
+        },
         "X": {
           "projections": [
             {
@@ -27,7 +86,8 @@
                 }
               },
               "queryRef": "Fact_Listings.longitude",
-              "nativeQueryRef": "longitude"
+              "nativeQueryRef": "Longitude",
+              "displayName": "Longitude"
             }
           ]
         },
@@ -45,7 +105,8 @@
                 }
               },
               "queryRef": "Fact_Listings.latitude",
-              "nativeQueryRef": "latitude"
+              "nativeQueryRef": "Latitude",
+              "displayName": "Latitude"
             }
           ]
         }
@@ -61,18 +122,13 @@
                   "expr": {
                     "FillRule": {
                       "Input": {
-                        "Aggregation": {
+                        "Measure": {
                           "Expression": {
-                            "Column": {
-                              "Expression": {
-                                "SourceRef": {
-                                  "Entity": "Fact_Listings"
-                                }
-                              },
-                              "Property": "longitude"
+                            "SourceRef": {
+                              "Entity": "_Measures"
                             }
                           },
-                          "Function": 0
+                          "Property": "Total Revenue Potential"
                         }
                       },
                       "FillRule": {
@@ -156,6 +212,27 @@
               "expr": {
                 "Literal": {
                   "Value": "false"
+                }
+              }
+            },
+            "zoom": {
+              "expr": {
+                "Literal": {
+                  "Value": "9.47D"
+                }
+              }
+            },
+            "centerLatitude": {
+              "expr": {
+                "Literal": {
+                  "Value": "40.708759434036125D"
+                }
+              }
+            },
+            "centerLongitude": {
+              "expr": {
+                "Literal": {
+                  "Value": "-73.9109659627373D"
                 }
               }
             }
