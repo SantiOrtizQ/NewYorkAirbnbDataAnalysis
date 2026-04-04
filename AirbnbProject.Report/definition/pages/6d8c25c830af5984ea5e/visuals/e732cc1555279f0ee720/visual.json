@@ -152,6 +152,13 @@
                   "Value": "true"
                 }
               }
+            },
+            "titleText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Neighbourhood'"
+                }
+              }
             }
           }
         }
