@@ -5428,99 +5428,7 @@ cultureInfo en-US
 			    }
 			  },
 			  "Relationships": {
-			    "dim_host_is_named_host_id": {
-			      "Binding": {
-			        "ConceptualEntity": "Dim_Host"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_host": {
-			          "Target": {
-			            "Entity": "dim_host"
-			          }
-			        },
-			        "dim_host.host_id": {
-			          "Target": {
-			            "Entity": "dim_host.host_id"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Name": {
-			            "Subject": {
-			              "Role": "dim_host"
-			            },
-			            "Name": {
-			              "Role": "dim_host.host_id"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "host_ids_are_names_IDs_of_dim_hosts"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_host"
-			            },
-			            "Object": {
-			              "Role": "dim_host.host_id"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_hosts_have_host_ids"
-			        }
-			      ]
-			    },
-			    "dim_room_type_is_named_room_type_id": {
-			      "Binding": {
-			        "ConceptualEntity": "Dim_RoomType"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_room_type": {
-			          "Target": {
-			            "Entity": "dim_room_type"
-			          }
-			        },
-			        "dim_room_type.room_type_id": {
-			          "Target": {
-			            "Entity": "dim_room_type.room_type_id"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Name": {
-			            "Subject": {
-			              "Role": "dim_room_type"
-			            },
-			            "Name": {
-			              "Role": "dim_room_type.room_type_id"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "room_type_ids_are_names_IDs_of_dim_room_types"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_room_type"
-			            },
-			            "Object": {
-			              "Role": "dim_room_type.room_type_id"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_room_types_have_room_type_ids"
-			        }
-			      ]
-			    },
-			    "fact_listing_is_named_listing_id": {
+			    "fact_listing_has_entity__measure_top_neighbourhood_by_listings": {
 			      "Binding": {
 			        "ConceptualEntity": "Fact_Listings"
 			      },
@@ -5531,42 +5439,62 @@ cultureInfo en-US
 			            "Entity": "fact_listing"
 			          }
 			        },
-			        "fact_listing.listing_id": {
+			        "entity__measure.top_neighbourhood_by_listings": {
 			          "Target": {
-			            "Entity": "fact_listing.listing_id"
+			            "Entity": "entity__measure.top_neighbourhood_by_listings"
 			          }
 			        }
 			      },
 			      "Phrasings": [
-			        {
-			          "Name": {
-			            "Subject": {
-			              "Role": "fact_listing"
-			            },
-			            "Name": {
-			              "Role": "fact_listing.listing_id"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "listing_ids_are_names_IDs_of_fact_listing"
-			        },
 			        {
 			          "Attribute": {
 			            "Subject": {
 			              "Role": "fact_listing"
 			            },
 			            "Object": {
-			              "Role": "fact_listing.listing_id"
+			              "Role": "entity__measure.top_neighbourhood_by_listings"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "fact_listing_have_listing_ids"
+			          "ID": "fact_listing_have_top_neighbourhood_by_listings"
 			        }
 			      ]
 			    },
-			    "fact_listing_is_named_name": {
+			    "dim_neighbourhood_has_entity__measure_top_neighbourhood_by_listings": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim_Neighbourhood"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_neighbourhood": {
+			          "Target": {
+			            "Entity": "dim_neighbourhood"
+			          }
+			        },
+			        "entity__measure.top_neighbourhood_by_listings": {
+			          "Target": {
+			            "Entity": "entity__measure.top_neighbourhood_by_listings"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_neighbourhood"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.top_neighbourhood_by_listings"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_neighbourhoods_have_top_neighbourhood_by_listings"
+			        }
+			      ]
+			    },
+			    "fact_listing_has_entity__measure_revenue_potential_per_listing": {
 			      "Binding": {
 			        "ConceptualEntity": "Fact_Listings"
 			      },
@@ -5577,42 +5505,887 @@ cultureInfo en-US
 			            "Entity": "fact_listing"
 			          }
 			        },
-			        "fact_listing.name": {
+			        "entity__measure.revenue_potential_per_listing": {
 			          "Target": {
-			            "Entity": "fact_listing.name"
+			            "Entity": "entity__measure.revenue_potential_per_listing"
 			          }
 			        }
 			      },
 			      "Phrasings": [
-			        {
-			          "Name": {
-			            "Subject": {
-			              "Role": "fact_listing"
-			            },
-			            "Name": {
-			              "Role": "fact_listing.name"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "names_are_names_IDs_of_fact_listing"
-			        },
 			        {
 			          "Attribute": {
 			            "Subject": {
 			              "Role": "fact_listing"
 			            },
 			            "Object": {
-			              "Role": "fact_listing.name"
+			              "Role": "entity__measure.revenue_potential_per_listing"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "fact_listing_have_names"
+			          "ID": "fact_listing_have_revenue_potential_per_listing"
 			        }
 			      ]
 			    },
-			    "fact_listing_is_expensive": {
+			    "fact_listing_has_entity__measure_occupancy_rate_proxy": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_Listings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_listing": {
+			          "Target": {
+			            "Entity": "fact_listing"
+			          }
+			        },
+			        "entity__measure.occupancy_rate_proxy": {
+			          "Target": {
+			            "Entity": "entity__measure.occupancy_rate_proxy"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_listing"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.occupancy_rate_proxy"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_listing_have_occupancy_rate_proxy"
+			        }
+			      ]
+			    },
+			    "fact_listing_has_entity__measure_avg_price__private_room": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_Listings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_listing": {
+			          "Target": {
+			            "Entity": "fact_listing"
+			          }
+			        },
+			        "entity__measure.avg_price__private_room": {
+			          "Target": {
+			            "Entity": "entity__measure.avg_price__private_room"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_listing"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.avg_price__private_room"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_listing_have_avg_price__private_room"
+			        }
+			      ]
+			    },
+			    "fact_listing_has_entity__measure_avg_price__entire_home": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_Listings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_listing": {
+			          "Target": {
+			            "Entity": "fact_listing"
+			          }
+			        },
+			        "entity__measure.avg_price__entire_home": {
+			          "Target": {
+			            "Entity": "entity__measure.avg_price__entire_home"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_listing"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.avg_price__entire_home"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_listing_have_avg_price__entire_home"
+			        }
+			      ]
+			    },
+			    "fact_listing_has_entity__measure_private_room": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_Listings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_listing": {
+			          "Target": {
+			            "Entity": "fact_listing"
+			          }
+			        },
+			        "entity__measure.private_room": {
+			          "Target": {
+			            "Entity": "entity__measure.private_room"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_listing"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.private_room"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_listing_have__private_room"
+			        }
+			      ]
+			    },
+			    "fact_listing_has_entity__measure_entire_home": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_Listings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_listing": {
+			          "Target": {
+			            "Entity": "fact_listing"
+			          }
+			        },
+			        "entity__measure.entire_home": {
+			          "Target": {
+			            "Entity": "entity__measure.entire_home"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_listing"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.entire_home"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_listing_have__entire_home"
+			        }
+			      ]
+			    },
+			    "fact_listing_has_entity__measure_price_per_availability_day": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_Listings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_listing": {
+			          "Target": {
+			            "Entity": "fact_listing"
+			          }
+			        },
+			        "entity__measure.price_per_availability_day": {
+			          "Target": {
+			            "Entity": "entity__measure.price_per_availability_day"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_listing"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.price_per_availability_day"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_listing_have_price_per_availability_day"
+			        }
+			      ]
+			    },
+			    "fact_listing_has_entity__measure_multilisting_hosts": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_Listings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_listing": {
+			          "Target": {
+			            "Entity": "fact_listing"
+			          }
+			        },
+			        "entity__measure.multilisting_hosts": {
+			          "Target": {
+			            "Entity": "entity__measure.multilisting_hosts"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_listing"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.multilisting_hosts"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_listing_have_multilisting_hosts"
+			        }
+			      ]
+			    },
+			    "fact_listing_has_entity__measure_average_host_listings_count": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_Listings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_listing": {
+			          "Target": {
+			            "Entity": "fact_listing"
+			          }
+			        },
+			        "entity__measure.average_host_listings_count": {
+			          "Target": {
+			            "Entity": "entity__measure.average_host_listings_count"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_listing"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.average_host_listings_count"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_listing_have_average_host_listings_count"
+			        }
+			      ]
+			    },
+			    "fact_listing_has_entity__measure_high_availability_listings": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_Listings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_listing": {
+			          "Target": {
+			            "Entity": "fact_listing"
+			          }
+			        },
+			        "entity__measure.high_availability_listings": {
+			          "Target": {
+			            "Entity": "entity__measure.high_availability_listings"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_listing"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.high_availability_listings"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_listing_have_high_availability_listings"
+			        }
+			      ]
+			    },
+			    "fact_listing_has_entity__measure_listings_with_reviews_": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_Listings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_listing": {
+			          "Target": {
+			            "Entity": "fact_listing"
+			          }
+			        },
+			        "entity__measure.listings_with_reviews_": {
+			          "Target": {
+			            "Entity": "entity__measure.listings_with_reviews_"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_listing"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.listings_with_reviews_"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_listing_have_listings_with_reviews_"
+			        }
+			      ]
+			    },
+			    "fact_listing_has_entity__measure_average_reviews_per_month": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_Listings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_listing": {
+			          "Target": {
+			            "Entity": "fact_listing"
+			          }
+			        },
+			        "entity__measure.average_reviews_per_month": {
+			          "Target": {
+			            "Entity": "entity__measure.average_reviews_per_month"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_listing"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.average_reviews_per_month"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_listing_have_average_reviews_per_month"
+			        }
+			      ]
+			    },
+			    "fact_listing_has_entity__measure_average_reviews_per_listing": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_Listings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_listing": {
+			          "Target": {
+			            "Entity": "fact_listing"
+			          }
+			        },
+			        "entity__measure.average_reviews_per_listing": {
+			          "Target": {
+			            "Entity": "entity__measure.average_reviews_per_listing"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_listing"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.average_reviews_per_listing"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_listing_have_average_reviews_per_listing"
+			        }
+			      ]
+			    },
+			    "fact_listing_has_entity__measure_total_reviews": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_Listings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_listing": {
+			          "Target": {
+			            "Entity": "fact_listing"
+			          }
+			        },
+			        "entity__measure.total_reviews": {
+			          "Target": {
+			            "Entity": "entity__measure.total_reviews"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_listing"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.total_reviews"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_listing_have_total_reviews"
+			        }
+			      ]
+			    },
+			    "fact_listing_has_entity__measure_average_minimum_nights": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_Listings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_listing": {
+			          "Target": {
+			            "Entity": "fact_listing"
+			          }
+			        },
+			        "entity__measure.average_minimum_nights": {
+			          "Target": {
+			            "Entity": "entity__measure.average_minimum_nights"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_listing"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.average_minimum_nights"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_listing_have_average_minimum_nights"
+			        }
+			      ]
+			    },
+			    "fact_listing_has_entity__measure_average_availability": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_Listings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_listing": {
+			          "Target": {
+			            "Entity": "fact_listing"
+			          }
+			        },
+			        "entity__measure.average_availability": {
+			          "Target": {
+			            "Entity": "entity__measure.average_availability"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_listing"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.average_availability"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_listing_have_average_availability"
+			        }
+			      ]
+			    },
+			    "fact_listing_has_entity__measure_median_price": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_Listings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_listing": {
+			          "Target": {
+			            "Entity": "fact_listing"
+			          }
+			        },
+			        "entity__measure.median_price": {
+			          "Target": {
+			            "Entity": "entity__measure.median_price"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_listing"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.median_price"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_listing_have_median_price"
+			        }
+			      ]
+			    },
+			    "fact_listing_has_entity__measure_average_price": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_Listings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_listing": {
+			          "Target": {
+			            "Entity": "fact_listing"
+			          }
+			        },
+			        "entity__measure.average_price": {
+			          "Target": {
+			            "Entity": "entity__measure.average_price"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_listing"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.average_price"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_listing_have_average_price"
+			        }
+			      ]
+			    },
+			    "fact_listing_has_entity__measure_total_hosts": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_Listings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_listing": {
+			          "Target": {
+			            "Entity": "fact_listing"
+			          }
+			        },
+			        "entity__measure.total_hosts": {
+			          "Target": {
+			            "Entity": "entity__measure.total_hosts"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_listing"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.total_hosts"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_listing_have_total_hosts"
+			        }
+			      ]
+			    },
+			    "fact_listing_has_entity__measure_total_listings": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_Listings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_listing": {
+			          "Target": {
+			            "Entity": "fact_listing"
+			          }
+			        },
+			        "entity__measure.total_listings": {
+			          "Target": {
+			            "Entity": "entity__measure.total_listings"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_listing"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.total_listings"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_listing_have_total_listings"
+			        }
+			      ]
+			    },
+			    "entity__measure_has_placeholder": {
+			      "Binding": {
+			        "ConceptualEntity": "_Measures"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "entity__measure": {
+			          "Target": {
+			            "Entity": "entity__measure"
+			          }
+			        },
+			        "entity__measure.placeholder": {
+			          "Target": {
+			            "Entity": "entity__measure.placeholder"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "entity__measure"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.placeholder"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_measures_have_placeholders"
+			        }
+			      ]
+			    },
+			    "fact_listing_has_availability_365": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_Listings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_listing": {
+			          "Target": {
+			            "Entity": "fact_listing"
+			          }
+			        },
+			        "fact_listing.availability_365": {
+			          "Target": {
+			            "Entity": "fact_listing.availability_365"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_listing"
+			            },
+			            "Object": {
+			              "Role": "fact_listing.availability_365"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_listing_have_availability_365"
+			        }
+			      ]
+			    },
+			    "fact_listing_has_calculated_host_listings_count": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_Listings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_listing": {
+			          "Target": {
+			            "Entity": "fact_listing"
+			          }
+			        },
+			        "fact_listing.calculated_host_listings_count": {
+			          "Target": {
+			            "Entity": "fact_listing.calculated_host_listings_count"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_listing"
+			            },
+			            "Object": {
+			              "Role": "fact_listing.calculated_host_listings_count"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_listing_have_calculated_host_listings_counts"
+			        }
+			      ]
+			    },
+			    "fact_listing_has_review_per_month": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_Listings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_listing": {
+			          "Target": {
+			            "Entity": "fact_listing"
+			          }
+			        },
+			        "fact_listing.review_per_month": {
+			          "Target": {
+			            "Entity": "fact_listing.review_per_month"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_listing"
+			            },
+			            "Object": {
+			              "Role": "fact_listing.review_per_month"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_listing_have_review_per_month"
+			        }
+			      ]
+			    },
+			    "fact_listing_has_last_review": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_Listings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_listing": {
+			          "Target": {
+			            "Entity": "fact_listing"
+			          }
+			        },
+			        "fact_listing.last_review": {
+			          "Target": {
+			            "Entity": "fact_listing.last_review"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_listing"
+			            },
+			            "Object": {
+			              "Role": "fact_listing.last_review"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_listing_have_last_reviews"
+			        }
+			      ]
+			    },
+			    "fact_listing_has_number_of_reviews": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_Listings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_listing": {
+			          "Target": {
+			            "Entity": "fact_listing"
+			          }
+			        },
+			        "fact_listing.number_of_reviews": {
+			          "Target": {
+			            "Entity": "fact_listing.number_of_reviews"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_listing"
+			            },
+			            "Object": {
+			              "Role": "fact_listing.number_of_reviews"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_listing_have_number_of_reviews"
+			        }
+			      ]
+			    },
+			    "fact_listing_has_minimum_night": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_Listings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_listing": {
+			          "Target": {
+			            "Entity": "fact_listing"
+			          }
+			        },
+			        "fact_listing.minimum_night": {
+			          "Target": {
+			            "Entity": "fact_listing.minimum_night"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_listing"
+			            },
+			            "Object": {
+			              "Role": "fact_listing.minimum_night"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_listing_have_minimum_nights"
+			        }
+			      ]
+			    },
+			    "fact_listing_has_price": {
 			      "Binding": {
 			        "ConceptualEntity": "Fact_Listings"
 			      },
@@ -5630,6 +6403,19 @@ cultureInfo en-US
 			        }
 			      },
 			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_listing"
+			            },
+			            "Object": {
+			              "Role": "fact_listing.price"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_listing_have_prices"
+			        },
 			        {
 			          "Adjective": {
 			            "Subject": {
@@ -5656,23 +6442,102 @@ cultureInfo en-US
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "price_indicates_how_expensive_fact_listing_are"
+			        }
+			      ]
+			    },
+			    "fact_listing_has_name": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_Listings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_listing": {
+			          "Target": {
+			            "Entity": "fact_listing"
+			          }
 			        },
+			        "fact_listing.name": {
+			          "Target": {
+			            "Entity": "fact_listing.name"
+			          }
+			        }
+			      },
+			      "Phrasings": [
 			        {
 			          "Attribute": {
 			            "Subject": {
 			              "Role": "fact_listing"
 			            },
 			            "Object": {
-			              "Role": "fact_listing.price"
+			              "Role": "fact_listing.name"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "fact_listing_have_prices"
+			          "ID": "fact_listing_have_names"
+			        },
+			        {
+			          "Name": {
+			            "Subject": {
+			              "Role": "fact_listing"
+			            },
+			            "Name": {
+			              "Role": "fact_listing.name"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "names_are_names_IDs_of_fact_listing"
 			        }
 			      ]
 			    },
-			    "dim_room_type_is_room_type": {
+			    "fact_listing_has_listing_id": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_Listings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_listing": {
+			          "Target": {
+			            "Entity": "fact_listing"
+			          }
+			        },
+			        "fact_listing.listing_id": {
+			          "Target": {
+			            "Entity": "fact_listing.listing_id"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_listing"
+			            },
+			            "Object": {
+			              "Role": "fact_listing.listing_id"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_listing_have_listing_ids"
+			        },
+			        {
+			          "Name": {
+			            "Subject": {
+			              "Role": "fact_listing"
+			            },
+			            "Name": {
+			              "Role": "fact_listing.listing_id"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "listing_ids_are_names_IDs_of_fact_listing"
+			        }
+			      ]
+			    },
+			    "dim_room_type_has_room_type": {
 			      "Binding": {
 			        "ConceptualEntity": "Dim_RoomType"
 			      },
@@ -5691,19 +6556,6 @@ cultureInfo en-US
 			      },
 			      "Phrasings": [
 			        {
-			          "DynamicAdjective": {
-			            "Subject": {
-			              "Role": "dim_room_type"
-			            },
-			            "Adjective": {
-			              "Role": "dim_room_type.room_type"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "room_types_describe_dim_room_types"
-			        },
-			        {
 			          "Attribute": {
 			            "Subject": {
 			              "Role": "dim_room_type"
@@ -5715,10 +6567,102 @@ cultureInfo en-US
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "dim_room_types_have_room_types"
+			        },
+			        {
+			          "DynamicAdjective": {
+			            "Subject": {
+			              "Role": "dim_room_type"
+			            },
+			            "Adjective": {
+			              "Role": "dim_room_type.room_type"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "room_types_describe_dim_room_types"
 			        }
 			      ]
 			    },
-			    "dim_neighbourhood_in_neighbourhood": {
+			    "dim_room_type_has_room_type_id": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim_RoomType"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_room_type": {
+			          "Target": {
+			            "Entity": "dim_room_type"
+			          }
+			        },
+			        "dim_room_type.room_type_id": {
+			          "Target": {
+			            "Entity": "dim_room_type.room_type_id"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_room_type"
+			            },
+			            "Object": {
+			              "Role": "dim_room_type.room_type_id"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_room_types_have_room_type_ids"
+			        },
+			        {
+			          "Name": {
+			            "Subject": {
+			              "Role": "dim_room_type"
+			            },
+			            "Name": {
+			              "Role": "dim_room_type.room_type_id"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "room_type_ids_are_names_IDs_of_dim_room_types"
+			        }
+			      ]
+			    },
+			    "dim_neighbourhood_has_neighbourhood_group": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim_Neighbourhood"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_neighbourhood": {
+			          "Target": {
+			            "Entity": "dim_neighbourhood"
+			          }
+			        },
+			        "dim_neighbourhood.neighbourhood_group": {
+			          "Target": {
+			            "Entity": "dim_neighbourhood.neighbourhood_group"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_neighbourhood"
+			            },
+			            "Object": {
+			              "Role": "dim_neighbourhood.neighbourhood_group"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_neighbourhoods_have_neighbourhood_groups"
+			        }
+			      ]
+			    },
+			    "dim_neighbourhood_has_neighbourhood": {
 			      "Binding": {
 			        "ConceptualEntity": "Dim_Neighbourhood"
 			      },
@@ -5735,31 +6679,230 @@ cultureInfo en-US
 			          }
 			        }
 			      },
-			      "SemanticSlots": {
-			        "Where": {
-			          "Role": "dim_neighbourhood.neighbourhood"
-			        }
-			      },
 			      "Phrasings": [
 			        {
-			          "Preposition": {
+			          "Attribute": {
 			            "Subject": {
 			              "Role": "dim_neighbourhood"
 			            },
-			            "Prepositions": [
-			              {
-			                "in": {
-			                  "State": "Generated"
-			                }
-			              }
-			            ],
 			            "Object": {
 			              "Role": "dim_neighbourhood.neighbourhood"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "dim_neighbourhoods_are_in_neighbourhoods"
+			          "ID": "dim_neighbourhoods_have_neighbourhoods"
+			        }
+			      ]
+			    },
+			    "dim_neighbourhood_has_neighbourhood_id": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim_Neighbourhood"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_neighbourhood": {
+			          "Target": {
+			            "Entity": "dim_neighbourhood"
+			          }
+			        },
+			        "dim_neighbourhood.neighbourhood_id": {
+			          "Target": {
+			            "Entity": "dim_neighbourhood.neighbourhood_id"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_neighbourhood"
+			            },
+			            "Object": {
+			              "Role": "dim_neighbourhood.neighbourhood_id"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_neighbourhoods_have_neighbourhood_ids"
+			        }
+			      ]
+			    },
+			    "dim_host_has_host_name": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim_Host"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_host": {
+			          "Target": {
+			            "Entity": "dim_host"
+			          }
+			        },
+			        "dim_host.host_name": {
+			          "Target": {
+			            "Entity": "dim_host.host_name"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_host"
+			            },
+			            "Object": {
+			              "Role": "dim_host.host_name"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_hosts_have_host_names"
+			        }
+			      ]
+			    },
+			    "dim_host_has_host_id": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim_Host"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_host": {
+			          "Target": {
+			            "Entity": "dim_host"
+			          }
+			        },
+			        "dim_host.host_id": {
+			          "Target": {
+			            "Entity": "dim_host.host_id"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_host"
+			            },
+			            "Object": {
+			              "Role": "dim_host.host_id"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_hosts_have_host_ids"
+			        },
+			        {
+			          "Name": {
+			            "Subject": {
+			              "Role": "dim_host"
+			            },
+			            "Name": {
+			              "Role": "dim_host.host_id"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "host_ids_are_names_IDs_of_dim_hosts"
+			        }
+			      ]
+			    },
+			    "fact_listing_has_entity__measure_total_revenue_potential": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_Listings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_listing": {
+			          "Target": {
+			            "Entity": "fact_listing"
+			          }
+			        },
+			        "entity__measure.total_revenue_potential": {
+			          "Target": {
+			            "Entity": "entity__measure.total_revenue_potential"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_listing"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.total_revenue_potential"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_listing_have_total_revenue_potential"
+			        }
+			      ]
+			    },
+			    "fact_listing_has_latitude": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_Listings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_listing": {
+			          "Target": {
+			            "Entity": "fact_listing"
+			          }
+			        },
+			        "fact_listing.latitude": {
+			          "Target": {
+			            "Entity": "fact_listing.latitude"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_listing"
+			            },
+			            "Object": {
+			              "Role": "fact_listing.latitude"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_listing_have_latitudes"
+			        }
+			      ]
+			    },
+			    "fact_listing_has_longitude": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_Listings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_listing": {
+			          "Target": {
+			            "Entity": "fact_listing"
+			          }
+			        },
+			        "fact_listing.longitude": {
+			          "Target": {
+			            "Entity": "fact_listing.longitude"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_listing"
+			            },
+			            "Object": {
+			              "Role": "fact_listing.longitude"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_listing_have_longitudes"
 			        }
 			      ]
 			    },
@@ -5808,172 +6951,7 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "fact_listing_has_longitude": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_Listings"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_listing": {
-			          "Target": {
-			            "Entity": "fact_listing"
-			          }
-			        },
-			        "fact_listing.longitude": {
-			          "Target": {
-			            "Entity": "fact_listing.longitude"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_listing"
-			            },
-			            "Object": {
-			              "Role": "fact_listing.longitude"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_listing_have_longitudes"
-			        }
-			      ]
-			    },
-			    "fact_listing_has_latitude": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_Listings"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_listing": {
-			          "Target": {
-			            "Entity": "fact_listing"
-			          }
-			        },
-			        "fact_listing.latitude": {
-			          "Target": {
-			            "Entity": "fact_listing.latitude"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_listing"
-			            },
-			            "Object": {
-			              "Role": "fact_listing.latitude"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_listing_have_latitudes"
-			        }
-			      ]
-			    },
-			    "fact_listing_has_entity__measure_total_revenue_potential": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_Listings"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_listing": {
-			          "Target": {
-			            "Entity": "fact_listing"
-			          }
-			        },
-			        "entity__measure.total_revenue_potential": {
-			          "Target": {
-			            "Entity": "entity__measure.total_revenue_potential"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_listing"
-			            },
-			            "Object": {
-			              "Role": "entity__measure.total_revenue_potential"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_listing_have_total_revenue_potential"
-			        }
-			      ]
-			    },
-			    "dim_host_has_host_name": {
-			      "Binding": {
-			        "ConceptualEntity": "Dim_Host"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_host": {
-			          "Target": {
-			            "Entity": "dim_host"
-			          }
-			        },
-			        "dim_host.host_name": {
-			          "Target": {
-			            "Entity": "dim_host.host_name"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_host"
-			            },
-			            "Object": {
-			              "Role": "dim_host.host_name"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_hosts_have_host_names"
-			        }
-			      ]
-			    },
-			    "dim_neighbourhood_has_neighbourhood_id": {
-			      "Binding": {
-			        "ConceptualEntity": "Dim_Neighbourhood"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_neighbourhood": {
-			          "Target": {
-			            "Entity": "dim_neighbourhood"
-			          }
-			        },
-			        "dim_neighbourhood.neighbourhood_id": {
-			          "Target": {
-			            "Entity": "dim_neighbourhood.neighbourhood_id"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_neighbourhood"
-			            },
-			            "Object": {
-			              "Role": "dim_neighbourhood.neighbourhood_id"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_neighbourhoods_have_neighbourhood_ids"
-			        }
-			      ]
-			    },
-			    "dim_neighbourhood_has_neighbourhood": {
+			    "dim_neighbourhood_in_neighbourhood": {
 			      "Binding": {
 			        "ConceptualEntity": "Dim_Neighbourhood"
 			      },
@@ -5990,1009 +6968,31 @@ cultureInfo en-US
 			          }
 			        }
 			      },
+			      "SemanticSlots": {
+			        "Where": {
+			          "Role": "dim_neighbourhood.neighbourhood"
+			        }
+			      },
 			      "Phrasings": [
 			        {
-			          "Attribute": {
+			          "Preposition": {
 			            "Subject": {
 			              "Role": "dim_neighbourhood"
 			            },
+			            "Prepositions": [
+			              {
+			                "in": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
 			            "Object": {
 			              "Role": "dim_neighbourhood.neighbourhood"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "dim_neighbourhoods_have_neighbourhoods"
-			        }
-			      ]
-			    },
-			    "dim_neighbourhood_has_neighbourhood_group": {
-			      "Binding": {
-			        "ConceptualEntity": "Dim_Neighbourhood"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_neighbourhood": {
-			          "Target": {
-			            "Entity": "dim_neighbourhood"
-			          }
-			        },
-			        "dim_neighbourhood.neighbourhood_group": {
-			          "Target": {
-			            "Entity": "dim_neighbourhood.neighbourhood_group"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_neighbourhood"
-			            },
-			            "Object": {
-			              "Role": "dim_neighbourhood.neighbourhood_group"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_neighbourhoods_have_neighbourhood_groups"
-			        }
-			      ]
-			    },
-			    "fact_listing_has_minimum_night": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_Listings"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_listing": {
-			          "Target": {
-			            "Entity": "fact_listing"
-			          }
-			        },
-			        "fact_listing.minimum_night": {
-			          "Target": {
-			            "Entity": "fact_listing.minimum_night"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_listing"
-			            },
-			            "Object": {
-			              "Role": "fact_listing.minimum_night"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_listing_have_minimum_nights"
-			        }
-			      ]
-			    },
-			    "fact_listing_has_number_of_reviews": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_Listings"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_listing": {
-			          "Target": {
-			            "Entity": "fact_listing"
-			          }
-			        },
-			        "fact_listing.number_of_reviews": {
-			          "Target": {
-			            "Entity": "fact_listing.number_of_reviews"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_listing"
-			            },
-			            "Object": {
-			              "Role": "fact_listing.number_of_reviews"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_listing_have_number_of_reviews"
-			        }
-			      ]
-			    },
-			    "fact_listing_has_last_review": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_Listings"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_listing": {
-			          "Target": {
-			            "Entity": "fact_listing"
-			          }
-			        },
-			        "fact_listing.last_review": {
-			          "Target": {
-			            "Entity": "fact_listing.last_review"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_listing"
-			            },
-			            "Object": {
-			              "Role": "fact_listing.last_review"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_listing_have_last_reviews"
-			        }
-			      ]
-			    },
-			    "fact_listing_has_review_per_month": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_Listings"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_listing": {
-			          "Target": {
-			            "Entity": "fact_listing"
-			          }
-			        },
-			        "fact_listing.review_per_month": {
-			          "Target": {
-			            "Entity": "fact_listing.review_per_month"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_listing"
-			            },
-			            "Object": {
-			              "Role": "fact_listing.review_per_month"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_listing_have_review_per_month"
-			        }
-			      ]
-			    },
-			    "fact_listing_has_calculated_host_listings_count": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_Listings"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_listing": {
-			          "Target": {
-			            "Entity": "fact_listing"
-			          }
-			        },
-			        "fact_listing.calculated_host_listings_count": {
-			          "Target": {
-			            "Entity": "fact_listing.calculated_host_listings_count"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_listing"
-			            },
-			            "Object": {
-			              "Role": "fact_listing.calculated_host_listings_count"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_listing_have_calculated_host_listings_counts"
-			        }
-			      ]
-			    },
-			    "fact_listing_has_availability_365": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_Listings"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_listing": {
-			          "Target": {
-			            "Entity": "fact_listing"
-			          }
-			        },
-			        "fact_listing.availability_365": {
-			          "Target": {
-			            "Entity": "fact_listing.availability_365"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_listing"
-			            },
-			            "Object": {
-			              "Role": "fact_listing.availability_365"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_listing_have_availability_365"
-			        }
-			      ]
-			    },
-			    "entity__measure_has_placeholder": {
-			      "Binding": {
-			        "ConceptualEntity": "_Measures"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "entity__measure": {
-			          "Target": {
-			            "Entity": "entity__measure"
-			          }
-			        },
-			        "entity__measure.placeholder": {
-			          "Target": {
-			            "Entity": "entity__measure.placeholder"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "entity__measure"
-			            },
-			            "Object": {
-			              "Role": "entity__measure.placeholder"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "Phrasing_measures_have_placeholders"
-			        }
-			      ]
-			    },
-			    "fact_listing_has_entity__measure_total_listings": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_Listings"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_listing": {
-			          "Target": {
-			            "Entity": "fact_listing"
-			          }
-			        },
-			        "entity__measure.total_listings": {
-			          "Target": {
-			            "Entity": "entity__measure.total_listings"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_listing"
-			            },
-			            "Object": {
-			              "Role": "entity__measure.total_listings"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_listing_have_total_listings"
-			        }
-			      ]
-			    },
-			    "fact_listing_has_entity__measure_total_hosts": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_Listings"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_listing": {
-			          "Target": {
-			            "Entity": "fact_listing"
-			          }
-			        },
-			        "entity__measure.total_hosts": {
-			          "Target": {
-			            "Entity": "entity__measure.total_hosts"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_listing"
-			            },
-			            "Object": {
-			              "Role": "entity__measure.total_hosts"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_listing_have_total_hosts"
-			        }
-			      ]
-			    },
-			    "fact_listing_has_entity__measure_average_price": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_Listings"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_listing": {
-			          "Target": {
-			            "Entity": "fact_listing"
-			          }
-			        },
-			        "entity__measure.average_price": {
-			          "Target": {
-			            "Entity": "entity__measure.average_price"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_listing"
-			            },
-			            "Object": {
-			              "Role": "entity__measure.average_price"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_listing_have_average_price"
-			        }
-			      ]
-			    },
-			    "fact_listing_has_entity__measure_median_price": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_Listings"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_listing": {
-			          "Target": {
-			            "Entity": "fact_listing"
-			          }
-			        },
-			        "entity__measure.median_price": {
-			          "Target": {
-			            "Entity": "entity__measure.median_price"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_listing"
-			            },
-			            "Object": {
-			              "Role": "entity__measure.median_price"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_listing_have_median_price"
-			        }
-			      ]
-			    },
-			    "fact_listing_has_entity__measure_average_availability": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_Listings"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_listing": {
-			          "Target": {
-			            "Entity": "fact_listing"
-			          }
-			        },
-			        "entity__measure.average_availability": {
-			          "Target": {
-			            "Entity": "entity__measure.average_availability"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_listing"
-			            },
-			            "Object": {
-			              "Role": "entity__measure.average_availability"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_listing_have_average_availability"
-			        }
-			      ]
-			    },
-			    "fact_listing_has_entity__measure_average_minimum_nights": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_Listings"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_listing": {
-			          "Target": {
-			            "Entity": "fact_listing"
-			          }
-			        },
-			        "entity__measure.average_minimum_nights": {
-			          "Target": {
-			            "Entity": "entity__measure.average_minimum_nights"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_listing"
-			            },
-			            "Object": {
-			              "Role": "entity__measure.average_minimum_nights"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_listing_have_average_minimum_nights"
-			        }
-			      ]
-			    },
-			    "fact_listing_has_entity__measure_total_reviews": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_Listings"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_listing": {
-			          "Target": {
-			            "Entity": "fact_listing"
-			          }
-			        },
-			        "entity__measure.total_reviews": {
-			          "Target": {
-			            "Entity": "entity__measure.total_reviews"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_listing"
-			            },
-			            "Object": {
-			              "Role": "entity__measure.total_reviews"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_listing_have_total_reviews"
-			        }
-			      ]
-			    },
-			    "fact_listing_has_entity__measure_average_reviews_per_listing": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_Listings"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_listing": {
-			          "Target": {
-			            "Entity": "fact_listing"
-			          }
-			        },
-			        "entity__measure.average_reviews_per_listing": {
-			          "Target": {
-			            "Entity": "entity__measure.average_reviews_per_listing"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_listing"
-			            },
-			            "Object": {
-			              "Role": "entity__measure.average_reviews_per_listing"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_listing_have_average_reviews_per_listing"
-			        }
-			      ]
-			    },
-			    "fact_listing_has_entity__measure_average_reviews_per_month": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_Listings"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_listing": {
-			          "Target": {
-			            "Entity": "fact_listing"
-			          }
-			        },
-			        "entity__measure.average_reviews_per_month": {
-			          "Target": {
-			            "Entity": "entity__measure.average_reviews_per_month"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_listing"
-			            },
-			            "Object": {
-			              "Role": "entity__measure.average_reviews_per_month"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_listing_have_average_reviews_per_month"
-			        }
-			      ]
-			    },
-			    "fact_listing_has_entity__measure_listings_with_reviews_": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_Listings"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_listing": {
-			          "Target": {
-			            "Entity": "fact_listing"
-			          }
-			        },
-			        "entity__measure.listings_with_reviews_": {
-			          "Target": {
-			            "Entity": "entity__measure.listings_with_reviews_"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_listing"
-			            },
-			            "Object": {
-			              "Role": "entity__measure.listings_with_reviews_"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_listing_have_listings_with_reviews_"
-			        }
-			      ]
-			    },
-			    "fact_listing_has_entity__measure_high_availability_listings": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_Listings"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_listing": {
-			          "Target": {
-			            "Entity": "fact_listing"
-			          }
-			        },
-			        "entity__measure.high_availability_listings": {
-			          "Target": {
-			            "Entity": "entity__measure.high_availability_listings"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_listing"
-			            },
-			            "Object": {
-			              "Role": "entity__measure.high_availability_listings"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_listing_have_high_availability_listings"
-			        }
-			      ]
-			    },
-			    "fact_listing_has_entity__measure_average_host_listings_count": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_Listings"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_listing": {
-			          "Target": {
-			            "Entity": "fact_listing"
-			          }
-			        },
-			        "entity__measure.average_host_listings_count": {
-			          "Target": {
-			            "Entity": "entity__measure.average_host_listings_count"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_listing"
-			            },
-			            "Object": {
-			              "Role": "entity__measure.average_host_listings_count"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_listing_have_average_host_listings_count"
-			        }
-			      ]
-			    },
-			    "fact_listing_has_entity__measure_multilisting_hosts": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_Listings"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_listing": {
-			          "Target": {
-			            "Entity": "fact_listing"
-			          }
-			        },
-			        "entity__measure.multilisting_hosts": {
-			          "Target": {
-			            "Entity": "entity__measure.multilisting_hosts"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_listing"
-			            },
-			            "Object": {
-			              "Role": "entity__measure.multilisting_hosts"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_listing_have_multilisting_hosts"
-			        }
-			      ]
-			    },
-			    "fact_listing_has_entity__measure_price_per_availability_day": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_Listings"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_listing": {
-			          "Target": {
-			            "Entity": "fact_listing"
-			          }
-			        },
-			        "entity__measure.price_per_availability_day": {
-			          "Target": {
-			            "Entity": "entity__measure.price_per_availability_day"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_listing"
-			            },
-			            "Object": {
-			              "Role": "entity__measure.price_per_availability_day"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_listing_have_price_per_availability_day"
-			        }
-			      ]
-			    },
-			    "fact_listing_has_entity__measure_entire_home": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_Listings"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_listing": {
-			          "Target": {
-			            "Entity": "fact_listing"
-			          }
-			        },
-			        "entity__measure.entire_home": {
-			          "Target": {
-			            "Entity": "entity__measure.entire_home"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_listing"
-			            },
-			            "Object": {
-			              "Role": "entity__measure.entire_home"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_listing_have__entire_home"
-			        }
-			      ]
-			    },
-			    "fact_listing_has_entity__measure_private_room": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_Listings"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_listing": {
-			          "Target": {
-			            "Entity": "fact_listing"
-			          }
-			        },
-			        "entity__measure.private_room": {
-			          "Target": {
-			            "Entity": "entity__measure.private_room"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_listing"
-			            },
-			            "Object": {
-			              "Role": "entity__measure.private_room"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_listing_have__private_room"
-			        }
-			      ]
-			    },
-			    "fact_listing_has_entity__measure_avg_price__entire_home": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_Listings"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_listing": {
-			          "Target": {
-			            "Entity": "fact_listing"
-			          }
-			        },
-			        "entity__measure.avg_price__entire_home": {
-			          "Target": {
-			            "Entity": "entity__measure.avg_price__entire_home"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_listing"
-			            },
-			            "Object": {
-			              "Role": "entity__measure.avg_price__entire_home"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_listing_have_avg_price__entire_home"
-			        }
-			      ]
-			    },
-			    "fact_listing_has_entity__measure_avg_price__private_room": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_Listings"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_listing": {
-			          "Target": {
-			            "Entity": "fact_listing"
-			          }
-			        },
-			        "entity__measure.avg_price__private_room": {
-			          "Target": {
-			            "Entity": "entity__measure.avg_price__private_room"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_listing"
-			            },
-			            "Object": {
-			              "Role": "entity__measure.avg_price__private_room"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_listing_have_avg_price__private_room"
-			        }
-			      ]
-			    },
-			    "fact_listing_has_entity__measure_occupancy_rate_proxy": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_Listings"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_listing": {
-			          "Target": {
-			            "Entity": "fact_listing"
-			          }
-			        },
-			        "entity__measure.occupancy_rate_proxy": {
-			          "Target": {
-			            "Entity": "entity__measure.occupancy_rate_proxy"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_listing"
-			            },
-			            "Object": {
-			              "Role": "entity__measure.occupancy_rate_proxy"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_listing_have_occupancy_rate_proxy"
-			        }
-			      ]
-			    },
-			    "fact_listing_has_entity__measure_revenue_potential_per_listing": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_Listings"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_listing": {
-			          "Target": {
-			            "Entity": "fact_listing"
-			          }
-			        },
-			        "entity__measure.revenue_potential_per_listing": {
-			          "Target": {
-			            "Entity": "entity__measure.revenue_potential_per_listing"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_listing"
-			            },
-			            "Object": {
-			              "Role": "entity__measure.revenue_potential_per_listing"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_listing_have_revenue_potential_per_listing"
-			        }
-			      ]
-			    },
-			    "dim_neighbourhood_has_entity__measure_top_neighbourhood_by_listings": {
-			      "Binding": {
-			        "ConceptualEntity": "Dim_Neighbourhood"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_neighbourhood": {
-			          "Target": {
-			            "Entity": "dim_neighbourhood"
-			          }
-			        },
-			        "entity__measure.top_neighbourhood_by_listings": {
-			          "Target": {
-			            "Entity": "entity__measure.top_neighbourhood_by_listings"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_neighbourhood"
-			            },
-			            "Object": {
-			              "Role": "entity__measure.top_neighbourhood_by_listings"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_neighbourhoods_have_top_neighbourhood_by_listings"
-			        }
-			      ]
-			    },
-			    "fact_listing_has_entity__measure_top_neighbourhood_by_listings": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_Listings"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_listing": {
-			          "Target": {
-			            "Entity": "fact_listing"
-			          }
-			        },
-			        "entity__measure.top_neighbourhood_by_listings": {
-			          "Target": {
-			            "Entity": "entity__measure.top_neighbourhood_by_listings"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_listing"
-			            },
-			            "Object": {
-			              "Role": "entity__measure.top_neighbourhood_by_listings"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_listing_have_top_neighbourhood_by_listings"
+			          "ID": "dim_neighbourhoods_are_in_neighbourhoods"
 			        }
 			      ]
 			    },

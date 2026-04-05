@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/report/3.1.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/report/3.2.0/schema.json",
   "themeCollection": {
     "baseTheme": {
       "name": "CY25SU12",
@@ -31,7 +31,7 @@
           "expanded": {
             "expr": {
               "Literal": {
-                "Value": "false"
+                "Value": "true"
               }
             }
           },
@@ -71,11 +71,6 @@
           "type": "Image"
         },
         {
-          "name": "Money7094877840140252.png",
-          "path": "Money7094877840140252.png",
-          "type": "Image"
-        },
-        {
           "name": "Host6542342655178602.png",
           "path": "Host6542342655178602.png",
           "type": "Image"
@@ -83,6 +78,11 @@
         {
           "name": "Listing7236779488870144.png",
           "path": "Listing7236779488870144.png",
+          "type": "Image"
+        },
+        {
+          "name": "Money7094877840140252.png",
+          "path": "Money7094877840140252.png",
           "type": "Image"
         },
         {

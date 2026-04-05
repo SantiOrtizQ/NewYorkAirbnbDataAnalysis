@@ -3,9 +3,9 @@
   "name": "35110ccae2c6562afa95",
   "position": {
     "x": 776,
-    "y": 248,
+    "y": 216,
     "z": 4000,
-    "height": 240,
+    "height": 272,
     "width": 496,
     "tabOrder": 4000
   },
@@ -119,6 +119,13 @@
               "expr": {
                 "Literal": {
                   "Value": "'Average Price by Neighbourhood'"
+                }
+              }
+            },
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
                 }
               }
             }

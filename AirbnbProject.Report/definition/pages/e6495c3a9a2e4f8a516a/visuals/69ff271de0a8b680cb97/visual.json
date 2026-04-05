@@ -3,9 +3,9 @@
   "name": "69ff271de0a8b680cb97",
   "position": {
     "x": 208,
-    "y": 248,
+    "y": 216,
     "z": 3000,
-    "height": 224,
+    "height": 256,
     "width": 560,
     "tabOrder": 3000
   },
@@ -27,8 +27,9 @@
                 }
               },
               "queryRef": "Dim_Neighbourhood.neighbourhood",
-              "nativeQueryRef": "neighbourhood",
-              "active": true
+              "nativeQueryRef": "Neighbourhood",
+              "active": true,
+              "displayName": "Neighbourhood"
             }
           ]
         },
@@ -39,14 +40,15 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Dim_RoomType"
+                      "Entity": "Dim_Neighbourhood"
                     }
                   },
-                  "Property": "room_type"
+                  "Property": "neighbourhood_group"
                 }
               },
-              "queryRef": "Dim_RoomType.room_type",
-              "nativeQueryRef": "room_type"
+              "queryRef": "Dim_Neighbourhood.neighbourhood_group",
+              "nativeQueryRef": "Borough",
+              "displayName": "Borough"
             }
           ]
         },
@@ -78,11 +80,11 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "Average Minimum Nights"
+                  "Property": "Average Price"
                 }
               },
-              "queryRef": "_Measures.Average Minimum Nights",
-              "nativeQueryRef": "Average Minimum Nights",
+              "queryRef": "_Measures.Average Price",
+              "nativeQueryRef": "Average Price",
               "active": true
             }
           ]
@@ -97,11 +99,11 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "Average Price"
+                  "Property": "Occupancy Rate Proxy"
                 }
               },
-              "queryRef": "_Measures.Average Price",
-              "nativeQueryRef": "Average Price"
+              "queryRef": "_Measures.Occupancy Rate Proxy",
+              "nativeQueryRef": "Occupancy Rate Proxy"
             }
           ]
         }
@@ -121,7 +123,27 @@
             "titleText": {
               "expr": {
                 "Literal": {
-                  "Value": "'Room Type'"
+                  "Value": "'Borough'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "zoom": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "showLabels": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }
@@ -149,8 +171,209 @@
             }
           }
         }
+      ],
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Occupancy & Average Price Relation by Neighbourhood'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Sized by Total Listings & Filtered by Top 100 on Total Listings'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "9D"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "e736e4a926f244196379",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "Total Listings"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "369dc0db597f608cd2aa",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "Average Price"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "31dd71a256149caa7462",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "Occupancy Rate Proxy"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "7e5a01ed9086da8a23fa",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Dim_Neighbourhood"
+              }
+            },
+            "Property": "neighbourhood_group"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "e80c61324ba647527b3d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Dim_Neighbourhood"
+              }
+            },
+            "Property": "neighbourhood"
+          }
+        },
+        "type": "TopN",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "subquery",
+              "Expression": {
+                "Subquery": {
+                  "Query": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "d",
+                        "Entity": "Dim_Neighbourhood",
+                        "Type": 0
+                      },
+                      {
+                        "Name": "_",
+                        "Entity": "_Measures",
+                        "Type": 0
+                      }
+                    ],
+                    "Select": [
+                      {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Source": "d"
+                            }
+                          },
+                          "Property": "neighbourhood"
+                        },
+                        "Name": "field"
+                      }
+                    ],
+                    "OrderBy": [
+                      {
+                        "Direction": 2,
+                        "Expression": {
+                          "Measure": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Source": "_"
+                              }
+                            },
+                            "Property": "Total Listings"
+                          }
+                        }
+                      }
+                    ],
+                    "Top": 100
+                  }
+                }
+              },
+              "Type": 2
+            },
+            {
+              "Name": "d",
+              "Entity": "Dim_Neighbourhood",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "d"
+                          }
+                        },
+                        "Property": "neighbourhood"
+                      }
+                    }
+                  ],
+                  "Table": {
+                    "SourceRef": {
+                      "Source": "subquery"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
   }
 }
