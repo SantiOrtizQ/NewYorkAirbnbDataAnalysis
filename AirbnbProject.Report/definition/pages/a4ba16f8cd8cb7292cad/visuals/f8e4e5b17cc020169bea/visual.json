@@ -1,18 +1,37 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "f8e4e5b17cc020169bea",
   "position": {
-    "x": 624,
+    "x": 704,
     "y": 208,
-    "z": 7000,
+    "z": 4000,
     "height": 248,
-    "width": 648,
-    "tabOrder": 7000
+    "width": 568,
+    "tabOrder": 4000
   },
   "visual": {
     "visualType": "scatterChart",
     "query": {
       "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_Host"
+                    }
+                  },
+                  "Property": "host_name"
+                }
+              },
+              "queryRef": "Dim_Host.host_name",
+              "nativeQueryRef": "host_name",
+              "active": true
+            }
+          ]
+        },
         "Size": {
           "projections": [
             {
@@ -41,11 +60,11 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "Total Listings per host"
+                  "Property": "Total Listings"
                 }
               },
-              "queryRef": "_Measures.Total Listings per host",
-              "nativeQueryRef": "Total Listings per host",
+              "queryRef": "_Measures.Total Listings",
+              "nativeQueryRef": "Total Listings",
               "active": true
             }
           ]
@@ -54,17 +73,17 @@
           "projections": [
             {
               "field": {
-                "Column": {
+                "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Fact_Listings"
+                      "Entity": "_Measures"
                     }
                   },
-                  "Property": "price"
+                  "Property": "Average Price"
                 }
               },
-              "queryRef": "Fact_Listings.price",
-              "nativeQueryRef": "price"
+              "queryRef": "_Measures.Average Price",
+              "nativeQueryRef": "Average Price"
             }
           ]
         }
@@ -95,13 +114,114 @@
         }
       ]
     },
+    "visualContainerObjects": {
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "radius": {
+              "expr": {
+                "Literal": {
+                  "Value": "4D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Total Listings and Average Price by Host'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Sized by Total Reviews and Default Filtering by Top 40 Hosts by Total Listings'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
     "drillFilterOtherVisuals": true
   },
   "filterConfig": {
     "filters": [
       {
-        "name": "3a2aa8b25839f1463778",
+        "name": "a5d92054bfd90a0f99c5",
         "ordinal": 0,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "Total Listings per host"
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User"
+      },
+      {
+        "name": "65fccfe57ed0dcacc799",
+        "ordinal": 1,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "Total Reviews"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "9e55985d188339ff5f92",
+        "ordinal": 2,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "Average Price"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "567259651f665d59c1a8",
+        "ordinal": 3,
         "field": {
           "Column": {
             "Expression": {
@@ -109,7 +229,7 @@
                 "Entity": "Dim_Host"
               }
             },
-            "Property": "host_id"
+            "Property": "host_name"
           }
         },
         "type": "TopN",
@@ -142,7 +262,7 @@
                               "Source": "d"
                             }
                           },
-                          "Property": "host_id"
+                          "Property": "host_name"
                         },
                         "Name": "field"
                       }
@@ -162,7 +282,7 @@
                         }
                       }
                     ],
-                    "Top": 50
+                    "Top": 40
                   }
                 }
               },
@@ -186,7 +306,7 @@
                             "Source": "d"
                           }
                         },
-                        "Property": "host_id"
+                        "Property": "host_name"
                       }
                     }
                   ],
@@ -199,53 +319,7 @@
               }
             }
           ]
-        },
-        "howCreated": "User"
-      },
-      {
-        "name": "c576678d4b9a62493eda",
-        "ordinal": 1,
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Fact_Listings"
-              }
-            },
-            "Property": "price"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "a5d92054bfd90a0f99c5",
-        "ordinal": 2,
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Measures"
-              }
-            },
-            "Property": "Total Listings per host"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "65fccfe57ed0dcacc799",
-        "ordinal": 3,
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Measures"
-              }
-            },
-            "Property": "Total Reviews"
-          }
-        },
-        "type": "Advanced"
+        }
       }
     ],
     "filterSortOrder": "Custom"

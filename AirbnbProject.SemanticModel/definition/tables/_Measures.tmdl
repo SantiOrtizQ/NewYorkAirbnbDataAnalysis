@@ -138,7 +138,7 @@ table _Measures
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	measure 'Single-Listing hosts' = [Total Hosts]-[Multi-Listing Hosts]
+	measure 'Single-Listing Hosts' = [Total Hosts]-[Multi-Listing Hosts]
 		formatString: 0
 		displayFolder: 📊 Volume
 		lineageTag: ee7111e6-0836-47ef-90ae-2f01aba17878

@@ -218,62 +218,6 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "e736e4a926f244196379",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Measures"
-              }
-            },
-            "Property": "Total Listings"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "369dc0db597f608cd2aa",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Measures"
-              }
-            },
-            "Property": "Average Price"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "31dd71a256149caa7462",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Measures"
-              }
-            },
-            "Property": "Occupancy Rate Proxy"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "7e5a01ed9086da8a23fa",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Dim_Neighbourhood"
-              }
-            },
-            "Property": "neighbourhood_group"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
         "name": "e80c61324ba647527b3d",
         "field": {
           "Column": {

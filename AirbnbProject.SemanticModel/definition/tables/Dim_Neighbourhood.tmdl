@@ -32,9 +32,10 @@ table Dim_Neighbourhood
 				    #"Reordered" = Table.ReorderColumns(#"Added Index", {"neighbourhood_id", "neighbourhood", "neighbourhood_group"}),
 				    #"Filtered Rows" = Table.SelectRows(Reordered, each not Text.Contains([neighbourhood], "40")),
 				    #"Filtered Rows1" = Table.SelectRows(#"Filtered Rows", each [neighbourhood_group] <> "197400421"),
-				    #"Filtered Rows2" = Table.SelectRows(#"Filtered Rows1", each [neighbourhood] <> null and [neighbourhood] <> "")
+				    #"Filtered Rows2" = Table.SelectRows(#"Filtered Rows1", each [neighbourhood] <> null and [neighbourhood] <> ""),
+				    #"Filtered Rows3" = Table.SelectRows(#"Filtered Rows2", each [neighbourhood_group] <> "Nadia")
 				in
-				    #"Filtered Rows2"
+				    #"Filtered Rows3"
 
 	annotation PBI_NavigationStepName = Navigation
 

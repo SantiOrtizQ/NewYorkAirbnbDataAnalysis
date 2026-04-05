@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "522339cad80afe75fd8c",
   "position": {
     "x": 208,
     "y": 464,
-    "z": 8000,
+    "z": 5000,
     "height": 240,
-    "width": 504,
-    "tabOrder": 8000
+    "width": 360,
+    "tabOrder": 5000
   },
   "visual": {
     "visualType": "donutChart",
@@ -37,11 +37,11 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "Single-Listing hosts"
+                  "Property": "Single-Listing Hosts"
                 }
               },
               "queryRef": "_Measures.Single-Listing hosts",
-              "nativeQueryRef": "Single-Listing hosts"
+              "nativeQueryRef": "Single-Listing Hosts"
             }
           ]
         }
@@ -73,6 +73,54 @@
               "expr": {
                 "Literal": {
                   "Value": "2L"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "legend": [
+        {
+          "properties": {
+            "position": {
+              "expr": {
+                "Literal": {
+                  "Value": "'TopCenter'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Multi-Listing Hosts and Single-Listing Hosts Distribution'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "radius": {
+              "expr": {
+                "Literal": {
+                  "Value": "4D"
                 }
               }
             }

@@ -31,7 +31,7 @@
           "expanded": {
             "expr": {
               "Literal": {
-                "Value": "true"
+                "Value": "false"
               }
             }
           },
@@ -71,8 +71,18 @@
           "type": "Image"
         },
         {
+          "name": "Buildings7747090791757415.png",
+          "path": "Buildings7747090791757415.png",
+          "type": "Image"
+        },
+        {
           "name": "Host6542342655178602.png",
           "path": "Host6542342655178602.png",
+          "type": "Image"
+        },
+        {
+          "name": "Hosts19007935917573526.png",
+          "path": "Hosts19007935917573526.png",
           "type": "Image"
         },
         {
@@ -81,8 +91,18 @@
           "type": "Image"
         },
         {
+          "name": "Money217528564319547457.png",
+          "path": "Money217528564319547457.png",
+          "type": "Image"
+        },
+        {
           "name": "Money7094877840140252.png",
           "path": "Money7094877840140252.png",
+          "type": "Image"
+        },
+        {
+          "name": "MultiHosts0928415478720469.png",
+          "path": "MultiHosts0928415478720469.png",
           "type": "Image"
         },
         {
