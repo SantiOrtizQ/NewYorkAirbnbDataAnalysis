@@ -4,10 +4,10 @@
   "position": {
     "x": 992,
     "y": 208,
-    "z": 11001,
+    "z": 11000,
     "height": 496,
     "width": 280,
-    "tabOrder": 11001
+    "tabOrder": 11000
   },
   "visual": {
     "visualType": "azureMap",
@@ -218,21 +218,21 @@
             "zoom": {
               "expr": {
                 "Literal": {
-                  "Value": "9.47D"
+                  "Value": "0D"
                 }
               }
             },
             "centerLatitude": {
               "expr": {
                 "Literal": {
-                  "Value": "40.708759434036125D"
+                  "Value": "0D"
                 }
               }
             },
             "centerLongitude": {
               "expr": {
                 "Literal": {
-                  "Value": "-73.9109659627373D"
+                  "Value": "0D"
                 }
               }
             }
@@ -279,34 +279,6 @@
   },
   "filterConfig": {
     "filters": [
-      {
-        "name": "15369f3427a61a2ac1b8",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Fact_Listings"
-              }
-            },
-            "Property": "longitude"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "bd6b971ee27ccd7af9d8",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Fact_Listings"
-              }
-            },
-            "Property": "latitude"
-          }
-        },
-        "type": "Advanced"
-      },
       {
         "name": "8bb013058b58f92424b1",
         "field": {

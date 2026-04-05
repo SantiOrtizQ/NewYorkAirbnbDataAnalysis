@@ -1,16 +1,16 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "8e3f5ab72827d6bc2f25",
   "position": {
     "x": 208,
     "y": 480,
-    "z": 8000,
+    "z": 5000,
     "height": 224,
     "width": 560,
-    "tabOrder": 8000
+    "tabOrder": 5000
   },
   "visual": {
-    "visualType": "areaChart",
+    "visualType": "clusteredColumnChart",
     "query": {
       "queryState": {
         "Category": {
@@ -27,8 +27,9 @@
                 }
               },
               "queryRef": "Dim_Neighbourhood.neighbourhood_group",
-              "nativeQueryRef": "neighbourhood_group",
-              "active": true
+              "nativeQueryRef": "Borough",
+              "active": true,
+              "displayName": "Borough"
             }
           ]
         },
@@ -94,6 +95,13 @@
                   "Value": "true"
                 }
               }
+            },
+            "position": {
+              "expr": {
+                "Literal": {
+                  "Value": "'TopCenter'"
+                }
+              }
             }
           }
         }
@@ -126,6 +134,74 @@
               "expr": {
                 "Literal": {
                   "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "labels": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "valueAxis": [
+        {
+          "properties": {
+            "titleText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Price'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Average Price and Median Price by Borough'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "radius": {
+              "expr": {
+                "Literal": {
+                  "Value": "4D"
                 }
               }
             }
