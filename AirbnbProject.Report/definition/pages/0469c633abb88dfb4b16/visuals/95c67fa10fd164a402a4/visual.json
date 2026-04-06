@@ -1,18 +1,62 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "95c67fa10fd164a402a4",
   "position": {
-    "x": 656,
+    "x": 976,
     "y": 80,
     "z": 5000,
-    "height": 312,
-    "width": 616,
+    "height": 624,
+    "width": 296,
     "tabOrder": 4000
   },
   "visual": {
     "visualType": "azureMap",
     "query": {
       "queryState": {
+        "Tooltips": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fact_Listings"
+                        }
+                      },
+                      "Property": "name"
+                    }
+                  },
+                  "Function": 3
+                }
+              },
+              "queryRef": "Min(Fact_Listings.name)",
+              "nativeQueryRef": "Name",
+              "displayName": "Name"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fact_Listings"
+                        }
+                      },
+                      "Property": "price"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Fact_Listings.price)",
+              "nativeQueryRef": "Price",
+              "displayName": "Price"
+            }
+          ]
+        },
         "X": {
           "projections": [
             {
@@ -27,7 +71,8 @@
                 }
               },
               "queryRef": "Fact_Listings.longitude",
-              "nativeQueryRef": "longitude"
+              "nativeQueryRef": "Longitude",
+              "displayName": "Longitude"
             }
           ]
         },
@@ -45,7 +90,8 @@
                 }
               },
               "queryRef": "Fact_Listings.latitude",
-              "nativeQueryRef": "latitude"
+              "nativeQueryRef": "Latitude",
+              "displayName": "Latitude"
             }
           ]
         }
@@ -69,25 +115,32 @@
                                   "Entity": "Fact_Listings"
                                 }
                               },
-                              "Property": "latitude"
+                              "Property": "price"
                             }
                           },
                           "Function": 0
                         }
                       },
                       "FillRule": {
-                        "linearGradient2": {
+                        "linearGradient3": {
                           "min": {
                             "color": {
                               "Literal": {
-                                "Value": "'#13FF0F'"
+                                "Value": "'#2EBE54'"
+                              }
+                            }
+                          },
+                          "mid": {
+                            "color": {
+                              "Literal": {
+                                "Value": "'#FFF200'"
                               }
                             }
                           },
                           "max": {
                             "color": {
                               "Literal": {
-                                "Value": "'#D64550'"
+                                "Value": "'#E71313'"
                               }
                             }
                           },
@@ -147,6 +200,27 @@
                   "Value": "true"
                 }
               }
+            },
+            "zoom": {
+              "expr": {
+                "Literal": {
+                  "Value": "12.53D"
+                }
+              }
+            },
+            "centerLatitude": {
+              "expr": {
+                "Literal": {
+                  "Value": "40.76485563331633D"
+                }
+              }
+            },
+            "centerLongitude": {
+              "expr": {
+                "Literal": {
+                  "Value": "-73.91924D"
+                }
+              }
             }
           }
         }
@@ -158,6 +232,41 @@
               "expr": {
                 "Literal": {
                   "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Top Listings by Price'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "radius": {
+              "expr": {
+                "Literal": {
+                  "Value": "4D"
                 }
               }
             }
@@ -231,7 +340,7 @@
                         }
                       }
                     ],
-                    "Top": 20
+                    "Top": 50
                   }
                 }
               },
@@ -270,6 +379,72 @@
           ]
         },
         "howCreated": "User"
+      },
+      {
+        "name": "5e8038ec6f4ba5b8a998",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact_Listings"
+              }
+            },
+            "Property": "longitude"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "a53d961c26fb02894e2a",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact_Listings"
+              }
+            },
+            "Property": "latitude"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "d39f96167783a005128d",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Fact_Listings"
+                  }
+                },
+                "Property": "name"
+              }
+            },
+            "Function": 3
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "8cca9f4e6c4425758d75",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Fact_Listings"
+                  }
+                },
+                "Property": "price"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }
