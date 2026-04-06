@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "d71c29f1f1cf65c4e741",
   "position": {
-    "x": 208,
-    "y": 80,
+    "x": 224,
+    "y": 96,
     "z": 6000,
-    "height": 312,
-    "width": 760,
+    "height": 288,
+    "width": 736,
     "tabOrder": 6000
   },
   "visual": {
@@ -292,48 +292,6 @@
   },
   "filterConfig": {
     "filters": [
-      {
-        "name": "d09fd9ec1f1787f652d9",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Dim_Neighbourhood"
-              }
-            },
-            "Property": "neighbourhood"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "3bb55939ef0b8771f599",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Measures"
-              }
-            },
-            "Property": "Average Price"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "dbc61a32f80345aafebc",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Measures"
-              }
-            },
-            "Property": "Median Price"
-          }
-        },
-        "type": "Advanced"
-      },
       {
         "name": "e1a6d53a18b3f48ee2c8",
         "field": {

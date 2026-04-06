@@ -2,10 +2,10 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "87c0e5ee6f7075ae3bd7",
   "position": {
-    "x": 616,
+    "x": 608,
     "y": 400,
     "z": 3000,
-    "height": 304,
+    "height": 296,
     "width": 352,
     "tabOrder": 2000
   },
@@ -274,20 +274,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "6e7892a1ab1b4d34e53c",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Measures"
-              }
-            },
-            "Property": "Total Listings"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

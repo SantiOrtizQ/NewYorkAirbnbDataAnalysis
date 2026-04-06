@@ -3,10 +3,10 @@
   "name": "95c67fa10fd164a402a4",
   "position": {
     "x": 976,
-    "y": 80,
+    "y": 96,
     "z": 5000,
-    "height": 624,
-    "width": 296,
+    "height": 608,
+    "width": 288,
     "tabOrder": 4000
   },
   "visual": {
@@ -204,21 +204,21 @@
             "zoom": {
               "expr": {
                 "Literal": {
-                  "Value": "12.53D"
+                  "Value": "0.22D"
                 }
               }
             },
             "centerLatitude": {
               "expr": {
                 "Literal": {
-                  "Value": "40.76485563331633D"
+                  "Value": "2.842170943040401e-14D"
                 }
               }
             },
             "centerLongitude": {
               "expr": {
                 "Literal": {
-                  "Value": "-73.91924D"
+                  "Value": "-0.3015049894921731D"
                 }
               }
             }
@@ -379,72 +379,6 @@
           ]
         },
         "howCreated": "User"
-      },
-      {
-        "name": "5e8038ec6f4ba5b8a998",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Fact_Listings"
-              }
-            },
-            "Property": "longitude"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "a53d961c26fb02894e2a",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Fact_Listings"
-              }
-            },
-            "Property": "latitude"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "d39f96167783a005128d",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Fact_Listings"
-                  }
-                },
-                "Property": "name"
-              }
-            },
-            "Function": 3
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "8cca9f4e6c4425758d75",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Fact_Listings"
-                  }
-                },
-                "Property": "price"
-              }
-            },
-            "Function": 0
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }
