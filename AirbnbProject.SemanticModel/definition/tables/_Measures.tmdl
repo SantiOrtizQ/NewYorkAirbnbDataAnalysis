@@ -146,6 +146,90 @@ table _Measures
 	measure 'Borough Deep Dive Title' = "Specific Information - " & SELECTEDVALUE(Dim_Neighbourhood[neighbourhood_group])
 		lineageTag: 4ebe5cf3-2b44-489c-b10e-c1c44d19d115
 
+	measure 'Specific Borough' = SELECTEDVALUE(Dim_Neighbourhood[neighbourhood_group])
+		lineageTag: b7c4a586-38e9-4cc3-acac-787ba4174952
+
+	measure 'Average Price No Filters' = CALCULATE([Average Price], REMOVEFILTERS())
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 0545b970-d874-4785-81d4-f18c361042e6
+
+	measure 'Average Price Borough' =
+			
+			VAR Borough = SELECTEDVALUE(Dim_Neighbourhood[neighbourhood_group])
+			RETURN
+			CALCULATE(AVERAGE(Fact_Listings[price]), REMOVEFILTERS(), Dim_Neighbourhood[neighbourhood_group]=Borough)
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: caad4d06-0c00-4315-beb5-ed2bc512ec60
+
+	measure 'Median Price No Filters' = CALCULATE([Median Price], REMOVEFILTERS())
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: e6168a6f-c3c0-466e-91ff-86a8b0446164
+
+	measure 'Median Price Borough' = CALCULATE(MEDIAN(Fact_Listings[price]), REMOVEFILTERS(), Dim_Neighbourhood[neighbourhood_group]=SELECTEDVALUE(Dim_Neighbourhood[neighbourhood_group]))
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: c57e879c-c920-4380-a402-ac8e3b4572fc
+
+	/// Average price across ALL listings, ignoring any page filters. Use as a global benchmark.
+	measure 'Avg Price - All Listings' =
+			CALCULATE(
+			    AVERAGE(Fact_Listings[price]),
+			    REMOVEFILTERS(Dim_Neighbourhood),
+			    REMOVEFILTERS(Dim_RoomType),
+			    REMOVEFILTERS(Fact_Listings)
+			)
+		formatString: $#,0.00
+		displayFolder: 📊 Comparisons
+		lineageTag: 912d8c85-b9b2-4613-8785-5a702b1f1311
+
+	/// Average price for the borough of the currently selected neighbourhood, removing the neighbourhood filter while keeping the borough filter.
+	measure 'Avg Price - Borough' =
+			VAR SelectedBorough =
+			    CALCULATE(
+			        SELECTEDVALUE(Dim_Neighbourhood[neighbourhood_group]),
+			        ALLEXCEPT(Dim_Neighbourhood, Dim_Neighbourhood[neighbourhood_group])
+			    )
+			RETURN
+			    CALCULATE(
+			        AVERAGE(Fact_Listings[price]),
+			        REMOVEFILTERS(Dim_Neighbourhood),
+			        Dim_Neighbourhood[neighbourhood_group] = SelectedBorough
+			    )
+		formatString: $#,0.00
+		displayFolder: 📊 Comparisons
+		lineageTag: 5aee5f86-e972-4b72-8c12-d859eb120a7e
+
+	/// Price premium or discount of selected neighbourhood vs its borough average. Positive = pricier than borough.
+	measure 'Avg Price - Neighbourhood vs Borough' = CALCULATE(AVERAGE(Fact_Listings[price])) - [Avg Price - Borough]
+		formatString: $#,0.00
+		displayFolder: 📊 Comparisons
+		lineageTag: 1735a6b6-4e86-4b52-92e1-028a75131404
+
+	/// Price premium or discount of selected neighbourhood vs overall NYC average. Positive = pricier than NYC.
+	measure 'Avg Price - Neighbourhood vs All' = CALCULATE(AVERAGE(Fact_Listings[price])) - [Avg Price - All Listings]
+		formatString: $#,0.00
+		displayFolder: 📊 Comparisons
+		lineageTag: a4137fb8-9091-4a34-bb9a-6d006814c5e6
+
+	/// Percentage difference between this neighbourhood avg price and its borough average.
+	measure 'Avg Price - Neighbourhood vs Borough %' =
+			DIVIDE(
+			    CALCULATE(AVERAGE(Fact_Listings[price])) - [Avg Price - Borough],
+			    [Avg Price - Borough]
+			)
+		formatString: +0.0%;-0.0%;0.0%
+		displayFolder: 📊 Comparisons
+		lineageTag: 2363cc5d-d647-4fd9-829e-a51834a12689
+
+	/// Percentage difference between this neighbourhood avg price and the overall NYC average.
+	measure 'Avg Price - Neighbourhood vs All %' =
+			DIVIDE(
+			    CALCULATE(AVERAGE(Fact_Listings[price])) - [Avg Price - All Listings],
+			    [Avg Price - All Listings]
+			)
+		formatString: +0.0%;-0.0%;0.0%
+		displayFolder: 📊 Comparisons
+		lineageTag: 6d29e90f-ac0b-4073-88f2-45ed1a80b44c
+
 	column Placeholder
 		lineageTag: d358c859-40ca-43c5-ba21-ff8003b1e9dd
 		isNameInferred

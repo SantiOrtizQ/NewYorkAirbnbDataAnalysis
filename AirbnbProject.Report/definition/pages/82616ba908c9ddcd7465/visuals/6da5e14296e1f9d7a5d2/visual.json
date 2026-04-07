@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
-  "name": "a9bfede78a72341720d7",
+  "name": "6da5e14296e1f9d7a5d2",
   "position": {
-    "x": 8,
-    "y": 80,
-    "z": 2000,
-    "height": 624,
-    "width": 184,
-    "tabOrder": 2000
+    "x": 208,
+    "y": 392,
+    "z": 6000,
+    "height": 312,
+    "width": 352,
+    "tabOrder": 6000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -23,11 +23,26 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "Total Listings"
+                  "Property": "Average Price No Filters"
                 }
               },
-              "queryRef": "_Measures.Total Listings",
-              "nativeQueryRef": "Total Listings"
+              "queryRef": "_Measures.Average Price No Filters",
+              "nativeQueryRef": "Average Price All Listings",
+              "displayName": "Average Price All Listings"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Average Price Borough"
+                }
+              },
+              "queryRef": "_Measures.Average Price Borough",
+              "nativeQueryRef": "Average Price Borough"
             },
             {
               "field": {
@@ -41,7 +56,8 @@
                 }
               },
               "queryRef": "_Measures.Average Price",
-              "nativeQueryRef": "Average Price"
+              "nativeQueryRef": "Average Price",
+              "displayName": "Average Price"
             },
             {
               "field": {
@@ -51,11 +67,12 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "Occupancy Rate Proxy"
+                  "Property": "Median Price No Filters"
                 }
               },
-              "queryRef": "_Measures.Occupancy Rate Proxy",
-              "nativeQueryRef": "Occupancy Rate Proxy"
+              "queryRef": "_Measures.Median Price No Filters",
+              "nativeQueryRef": "Median Price All Listings",
+              "displayName": "Median Price All Listings"
             },
             {
               "field": {
@@ -65,11 +82,11 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "Total Reviews"
+                  "Property": "Median Price Borough"
                 }
               },
-              "queryRef": "_Measures.Total Reviews",
-              "nativeQueryRef": "Total Reviews"
+              "queryRef": "_Measures.Median Price Borough",
+              "nativeQueryRef": "Median Price Borough"
             },
             {
               "field": {
@@ -79,11 +96,11 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "Total Revenue Potential"
+                  "Property": "Median Price"
                 }
               },
-              "queryRef": "_Measures.Total Revenue Potential",
-              "nativeQueryRef": "Total Revenue Potential"
+              "queryRef": "_Measures.Median Price",
+              "nativeQueryRef": "Median Price"
             }
           ]
         }
@@ -98,7 +115,7 @@
                     "Entity": "_Measures"
                   }
                 },
-                "Property": "Total Listings"
+                "Property": "Average Price No Filters"
               }
             },
             "direction": "Descending"
@@ -114,21 +131,21 @@
             "orientation": {
               "expr": {
                 "Literal": {
-                  "Value": "1D"
+                  "Value": "0D"
+                }
+              }
+            },
+            "columnCount": {
+              "expr": {
+                "Literal": {
+                  "Value": "3L"
                 }
               }
             },
             "rowCount": {
               "expr": {
                 "Literal": {
-                  "Value": "5L"
-                }
-              }
-            },
-            "cellPadding": {
-              "expr": {
-                "Literal": {
-                  "Value": "6L"
+                  "Value": "2L"
                 }
               }
             }
@@ -136,23 +153,158 @@
         },
         {
           "properties": {
+            "paddingUniform": {
+              "expr": {
+                "Literal": {
+                  "Value": "2L"
+                }
+              }
+            },
             "backgroundShow": {
               "expr": {
                 "Literal": {
                   "Value": "false"
                 }
               }
-            },
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ],
+      "padding": [
+        {
+          "properties": {
             "paddingUniform": {
               "expr": {
                 "Literal": {
-                  "Value": "5L"
+                  "Value": "2L"
                 }
               }
             }
           },
           "selector": {
             "id": "default"
+          }
+        }
+      ],
+      "value": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "18D"
+                }
+              }
+            },
+            "horizontalAlignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'center'"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        },
+        {
+          "properties": {
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Measures.Average Price No Filters"
+          }
+        },
+        {
+          "properties": {
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Measures.Average Price"
+          }
+        },
+        {
+          "properties": {
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Measures.Median Price No Filters"
+          }
+        },
+        {
+          "properties": {
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Measures.Median Price Borough"
+          }
+        },
+        {
+          "properties": {
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Measures.Median Price"
+          }
+        },
+        {
+          "properties": {
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Measures.Average Price Borough"
           }
         }
       ],
@@ -172,119 +324,7 @@
                   "expr": {
                     "ThemeDataColor": {
                       "ColorId": 0,
-                      "Percent": -0.2
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "selector": {
-            "id": "default"
-          }
-        }
-      ],
-      "value": [
-        {
-          "properties": {
-            "horizontalAlignment": {
-              "expr": {
-                "Literal": {
-                  "Value": "'center'"
-                }
-              }
-            },
-            "textWrap": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "20D"
-                }
-              }
-            },
-            "fontColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 0,
-                      "Percent": 0
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "selector": {
-            "id": "default"
-          }
-        },
-        {
-          "properties": {
-            "labelDisplayUnits": {
-              "expr": {
-                "Literal": {
-                  "Value": "0D"
-                }
-              }
-            },
-            "labelPrecision": {
-              "expr": {
-                "Literal": {
-                  "Value": "1L"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "_Measures.Total Revenue Potential"
-          }
-        },
-        {
-          "properties": {
-            "labelPrecision": {
-              "expr": {
-                "Literal": {
-                  "Value": "2L"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "_Measures.Total Listings"
-          }
-        },
-        {
-          "properties": {
-            "labelPrecision": {
-              "expr": {
-                "Literal": {
-                  "Value": "1L"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "_Measures.Total Reviews"
-          }
-        }
-      ],
-      "fillCustom": [
-        {
-          "properties": {
-            "fillColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 9,
-                      "Percent": -0.5
+                      "Percent": -0.1
                     }
                   }
                 }
@@ -299,10 +339,10 @@
       "outline": [
         {
           "properties": {
-            "weight": {
+            "show": {
               "expr": {
                 "Literal": {
-                  "Value": "2D"
+                  "Value": "true"
                 }
               }
             }
@@ -311,10 +351,8 @@
             "id": "default"
           }
         }
-      ]
-    },
-    "visualContainerObjects": {
-      "border": [
+      ],
+      "fillCustom": [
         {
           "properties": {
             "show": {
@@ -323,11 +361,44 @@
                   "Value": "false"
                 }
               }
-            },
-            "radius": {
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
               "expr": {
                 "Literal": {
-                  "Value": "4D"
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0.2
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
                 }
               }
             },
@@ -335,6 +406,13 @@
               "expr": {
                 "Literal": {
                   "Value": "2D"
+                }
+              }
+            },
+            "radius": {
+              "expr": {
+                "Literal": {
+                  "Value": "4D"
                 }
               }
             },
@@ -352,19 +430,6 @@
             }
           }
         }
-      ],
-      "background": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          }
-        }
       ]
     },
     "drillFilterOtherVisuals": true
@@ -372,7 +437,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "752820136d7b6f8a6e2f",
+        "name": "abc56ab49b6368f9d64c",
         "field": {
           "Measure": {
             "Expression": {
@@ -380,13 +445,27 @@
                 "Entity": "_Measures"
               }
             },
-            "Property": "Total Listings"
+            "Property": "Average Price No Filters"
           }
         },
         "type": "Advanced"
       },
       {
-        "name": "cb2c1dac79f67b469095",
+        "name": "390a706261f0034c9b46",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "Average Price Borough"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "4e069ace4c83fc597240",
         "field": {
           "Measure": {
             "Expression": {
@@ -400,7 +479,7 @@
         "type": "Advanced"
       },
       {
-        "name": "57eac23ae382823c4177",
+        "name": "41a234a7a38d4cd1ae4e",
         "field": {
           "Measure": {
             "Expression": {
@@ -408,13 +487,13 @@
                 "Entity": "_Measures"
               }
             },
-            "Property": "Occupancy Rate Proxy"
+            "Property": "Median Price No Filters"
           }
         },
         "type": "Advanced"
       },
       {
-        "name": "f3051415096e0aa69f68",
+        "name": "3f73230288a898cb587c",
         "field": {
           "Measure": {
             "Expression": {
@@ -422,13 +501,13 @@
                 "Entity": "_Measures"
               }
             },
-            "Property": "Total Reviews"
+            "Property": "Median Price Borough"
           }
         },
         "type": "Advanced"
       },
       {
-        "name": "aa768f5be7131e6367c6",
+        "name": "7eff77cc48a70d083b3b",
         "field": {
           "Measure": {
             "Expression": {
@@ -436,7 +515,7 @@
                 "Entity": "_Measures"
               }
             },
-            "Property": "Total Revenue Potential"
+            "Property": "Median Price"
           }
         },
         "type": "Advanced"

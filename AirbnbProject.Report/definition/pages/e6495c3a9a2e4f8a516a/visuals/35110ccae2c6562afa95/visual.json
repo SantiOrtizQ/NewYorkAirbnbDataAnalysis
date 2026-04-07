@@ -294,20 +294,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "f17fd833ddc71c25563d",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Measures"
-              }
-            },
-            "Property": "Average Price"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }
