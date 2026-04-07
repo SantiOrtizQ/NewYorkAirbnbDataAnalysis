@@ -171,5 +171,37 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "bb61b080e92e625d6850",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Dim_Neighbourhood"
+              }
+            },
+            "Property": "neighbourhood_group"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "e09e6171026db253beda",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "Average Reviews per Month"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }
