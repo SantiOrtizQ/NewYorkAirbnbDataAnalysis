@@ -5,7 +5,7 @@
     "x": 16,
     "y": 0,
     "z": 1000,
-    "height": 40,
+    "height": 48,
     "width": 288,
     "tabOrder": 1000
   },
@@ -30,11 +30,11 @@
                     },
                     "textStyle": {
                       "fontWeight": "bold",
-                      "fontSize": "14pt"
+                      "fontSize": "18pt",
+                      "color": "#ffffff"
                     }
                   }
-                ],
-                "horizontalTextAlignment": "center"
+                ]
               }
             ]
           }
@@ -110,6 +110,34 @@
           },
           "selector": {
             "id": "Value"
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
           }
         }
       ]
