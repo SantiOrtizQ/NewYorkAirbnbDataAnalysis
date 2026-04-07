@@ -230,6 +230,12 @@ table _Measures
 		displayFolder: 📊 Comparisons
 		lineageTag: 6d29e90f-ac0b-4073-88f2-45ed1a80b44c
 
+	measure 'Specific Host' = SELECTEDVALUE(Dim_Host[host_name])
+		lineageTag: 96e5dfd1-1143-42d5-9165-a54654912fd2
+
+	measure 'Host Profile Map Title' = "Listings Locations - " & [Specific Host]
+		lineageTag: 8a4ed9e6-06a3-4e49-a88d-e9fc427aeed9
+
 	column Placeholder
 		lineageTag: d358c859-40ca-43c5-ba21-ff8003b1e9dd
 		isNameInferred

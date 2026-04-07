@@ -1566,6 +1566,16 @@ cultureInfo en-US
 			            },
 			            "Weight": 0.714
 			          }
+			        },
+			        {
+			          "Listing Name": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
 			        }
 			      ],
 			      "NameType": "Name"
@@ -3073,6 +3083,16 @@ cultureInfo en-US
 			            },
 			            "Weight": 0.485
 			          }
+			        },
+			        {
+			          "Average Price Host": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
 			        }
 			      ]
 			    },
@@ -3188,6 +3208,16 @@ cultureInfo en-US
 			              "Agent": "Thesaurus"
 			            },
 			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "Median Price Host": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
 			          }
 			        }
 			      ]
@@ -6485,9 +6515,331 @@ cultureInfo en-US
 			          }
 			        }
 			      ]
+			    },
+			    "entity__measure.specific_host": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "Specific Host"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "specific host": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "host": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "specific congregation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "specific multitude": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "specific horde": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "specific army": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "congregation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "multitude": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "horde": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "army": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "specific crowd": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "specific swarm": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        }
+			      ]
+			    },
+			    "entity__measure.host_profile_map_title": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "Host Profile Map Title"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "host profile map title": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "title": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "map title": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "profile map title": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "host profile map designation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.771
+			          }
+			        },
+			        {
+			          "profile map designation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "map designation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "host profile map name": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.748
+			          }
+			        },
+			        {
+			          "host profile map award": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.748
+			          }
+			        },
+			        {
+			          "host profile map call": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.748
+			          }
+			        },
+			        {
+			          "host profile map heading": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.748
+			          }
+			        },
+			        {
+			          "host profile map label": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.748
+			          }
+			        },
+			        {
+			          "profile map name": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "profile map award": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        }
+			      ]
 			    }
 			  },
 			  "Relationships": {
+			    "fact_listing_has_entity__measure_avg_price__neighbourhood_vs_borough_": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_Listings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_listing": {
+			          "Target": {
+			            "Entity": "fact_listing"
+			          }
+			        },
+			        "entity__measure.avg_price__neighbourhood_vs_borough_": {
+			          "Target": {
+			            "Entity": "entity__measure.avg_price__neighbourhood_vs_borough_"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_listing"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.avg_price__neighbourhood_vs_borough_"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_listing_have_avg_price__neighbourhood_vs_borough_"
+			        }
+			      ]
+			    },
+			    "fact_listing_has_entity__measure_avg_price__neighbourhood_vs_all": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_Listings"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_listing": {
+			          "Target": {
+			            "Entity": "fact_listing"
+			          }
+			        },
+			        "entity__measure.avg_price__neighbourhood_vs_all": {
+			          "Target": {
+			            "Entity": "entity__measure.avg_price__neighbourhood_vs_all"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_listing"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.avg_price__neighbourhood_vs_all"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_listing_have_avg_price__neighbourhood_vs_all"
+			        }
+			      ]
+			    },
 			    "fact_listing_has_entity__measure_avg_price__neighbourhood_vs_borough": {
 			      "Binding": {
 			        "ConceptualEntity": "Fact_Listings"
@@ -8419,72 +8771,6 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "fact_listing_has_entity__measure_avg_price__neighbourhood_vs_all": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_Listings"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_listing": {
-			          "Target": {
-			            "Entity": "fact_listing"
-			          }
-			        },
-			        "entity__measure.avg_price__neighbourhood_vs_all": {
-			          "Target": {
-			            "Entity": "entity__measure.avg_price__neighbourhood_vs_all"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_listing"
-			            },
-			            "Object": {
-			              "Role": "entity__measure.avg_price__neighbourhood_vs_all"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_listing_have_avg_price__neighbourhood_vs_all"
-			        }
-			      ]
-			    },
-			    "fact_listing_has_entity__measure_avg_price__neighbourhood_vs_borough_": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_Listings"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_listing": {
-			          "Target": {
-			            "Entity": "fact_listing"
-			          }
-			        },
-			        "entity__measure.avg_price__neighbourhood_vs_borough_": {
-			          "Target": {
-			            "Entity": "entity__measure.avg_price__neighbourhood_vs_borough_"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_listing"
-			            },
-			            "Object": {
-			              "Role": "entity__measure.avg_price__neighbourhood_vs_borough_"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_listing_have_avg_price__neighbourhood_vs_borough_"
-			        }
-			      ]
-			    },
 			    "fact_listing_has_entity__measure_avg_price__neighbourhood_vs_all_": {
 			      "Binding": {
 			        "ConceptualEntity": "Fact_Listings"
@@ -8515,6 +8801,72 @@ cultureInfo en-US
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "fact_listing_have_avg_price__neighbourhood_vs_all_"
+			        }
+			      ]
+			    },
+			    "dim_host_has_entity__measure_specific_host": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim_Host"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_host": {
+			          "Target": {
+			            "Entity": "dim_host"
+			          }
+			        },
+			        "entity__measure.specific_host": {
+			          "Target": {
+			            "Entity": "entity__measure.specific_host"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_host"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.specific_host"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_hosts_have_specific_host"
+			        }
+			      ]
+			    },
+			    "dim_host_has_entity__measure_host_profile_map_title": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim_Host"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_host": {
+			          "Target": {
+			            "Entity": "dim_host"
+			          }
+			        },
+			        "entity__measure.host_profile_map_title": {
+			          "Target": {
+			            "Entity": "entity__measure.host_profile_map_title"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_host"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.host_profile_map_title"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_hosts_have_host_profile_map_title"
 			        }
 			      ]
 			    },

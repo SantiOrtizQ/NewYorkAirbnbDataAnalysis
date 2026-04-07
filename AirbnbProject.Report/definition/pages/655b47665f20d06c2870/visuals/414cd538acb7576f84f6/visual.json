@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "414cd538acb7576f84f6",
   "position": {
-    "x": 216,
-    "y": 80,
+    "x": 560,
+    "y": 88,
     "z": 3000,
-    "height": 280,
-    "width": 1048,
+    "height": 272,
+    "width": 704,
     "tabOrder": 3000
   },
   "visual": {
@@ -27,7 +27,8 @@
                 }
               },
               "queryRef": "Fact_Listings.name",
-              "nativeQueryRef": "name"
+              "nativeQueryRef": "Listing Name",
+              "displayName": "Listing Name"
             },
             {
               "field": {
@@ -41,7 +42,8 @@
                 }
               },
               "queryRef": "Dim_Neighbourhood.neighbourhood",
-              "nativeQueryRef": "neighbourhood"
+              "nativeQueryRef": "Neighbourhood",
+              "displayName": "Neighbourhood"
             },
             {
               "field": {
@@ -55,7 +57,8 @@
                 }
               },
               "queryRef": "Dim_RoomType.room_type",
-              "nativeQueryRef": "room_type"
+              "nativeQueryRef": "Room Type",
+              "displayName": "Room Type"
             },
             {
               "field": {
@@ -74,7 +77,8 @@
                 }
               },
               "queryRef": "Sum(Fact_Listings.price)",
-              "nativeQueryRef": "Sum of price"
+              "nativeQueryRef": "Price",
+              "displayName": "Price"
             },
             {
               "field": {
@@ -93,7 +97,8 @@
                 }
               },
               "queryRef": "Sum(Fact_Listings.availability_365)",
-              "nativeQueryRef": "Sum of availability_365"
+              "nativeQueryRef": "Available Days",
+              "displayName": "Available Days"
             },
             {
               "field": {
@@ -112,7 +117,8 @@
                 }
               },
               "queryRef": "Sum(Fact_Listings.number_of_reviews)",
-              "nativeQueryRef": "Sum of number_of_reviews"
+              "nativeQueryRef": "Reviews",
+              "displayName": "Reviews"
             }
           ]
         }
@@ -121,18 +127,13 @@
         "sort": [
           {
             "field": {
-              "Aggregation": {
+              "Column": {
                 "Expression": {
-                  "Column": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "Fact_Listings"
-                      }
-                    },
-                    "Property": "number_of_reviews"
+                  "SourceRef": {
+                    "Entity": "Fact_Listings"
                   }
                 },
-                "Function": 0
+                "Property": "name"
               }
             },
             "direction": "Descending"
@@ -153,8 +154,211 @@
             }
           }
         }
+      ],
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "59.7112462006079D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(Fact_Listings.price)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "78.88750360135674D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(Fact_Listings.availability_365)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "63.95443681475018D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(Fact_Listings.number_of_reviews)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "259.44984999235504D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Fact_Listings.name"
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "radius": {
+              "expr": {
+                "Literal": {
+                  "Value": "4D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Available Listings'"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "f0cfb51d722134fd0887",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact_Listings"
+              }
+            },
+            "Property": "name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "0f7faf7fb5c90f308c9a",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Dim_Neighbourhood"
+              }
+            },
+            "Property": "neighbourhood"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "12aa55573d295c52e082",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Dim_RoomType"
+              }
+            },
+            "Property": "room_type"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "afd497c29eac1e911e66",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Fact_Listings"
+                  }
+                },
+                "Property": "price"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "9bacc3de12c72d444314",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Fact_Listings"
+                  }
+                },
+                "Property": "availability_365"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "2da84e6507023a35f805",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Fact_Listings"
+                  }
+                },
+                "Property": "number_of_reviews"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }
