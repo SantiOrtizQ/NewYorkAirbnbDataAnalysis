@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "925e853438ffe5f1a08b",
   "position": {
     "x": 8,
@@ -19,12 +19,42 @@
               {
                 "textRuns": [
                   {
-                    "value": "Dashboard Description HERE",
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Use the main filters on the left or specific filters on the filter pane.",
                     "textStyle": {
                       "color": "#ffffff"
                     }
                   }
-                ]
+                ],
+                "listType": "ordered"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Left-click on any borough and select Drillthrough to go to a specific information page.",
+                    "textStyle": {
+                      "color": "#ffffff"
+                    }
+                  }
+                ],
+                "listType": "ordered"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Click on the different elements of the visuals to filter other visuals.",
+                    "textStyle": {
+                      "color": "#ffffff"
+                    }
+                  }
+                ],
+                "listType": "ordered"
               }
             ]
           }
@@ -104,8 +134,8 @@
                 "color": {
                   "expr": {
                     "ThemeDataColor": {
-                      "ColorId": 1,
-                      "Percent": 0
+                      "ColorId": 9,
+                      "Percent": -0.5
                     }
                   }
                 }
@@ -114,7 +144,7 @@
             "transparency": {
               "expr": {
                 "Literal": {
-                  "Value": "49D"
+                  "Value": "0D"
                 }
               }
             }

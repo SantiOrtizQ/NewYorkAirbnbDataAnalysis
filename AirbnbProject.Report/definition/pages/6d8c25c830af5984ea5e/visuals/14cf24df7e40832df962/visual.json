@@ -122,13 +122,18 @@
                   "expr": {
                     "FillRule": {
                       "Input": {
-                        "Measure": {
+                        "Aggregation": {
                           "Expression": {
-                            "SourceRef": {
-                              "Entity": "_Measures"
+                            "Column": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Entity": "Fact_Listings"
+                                }
+                              },
+                              "Property": "price"
                             }
                           },
-                          "Property": "Total Revenue Potential"
+                          "Function": 0
                         }
                       },
                       "FillRule": {
@@ -218,21 +223,35 @@
             "zoom": {
               "expr": {
                 "Literal": {
-                  "Value": "0D"
+                  "Value": "8.57D"
                 }
               }
             },
             "centerLatitude": {
               "expr": {
                 "Literal": {
-                  "Value": "0D"
+                  "Value": "40.71229253841207D"
                 }
               }
             },
             "centerLongitude": {
               "expr": {
                 "Literal": {
-                  "Value": "0D"
+                  "Value": "-73.93194D"
+                }
+              }
+            },
+            "defaultStyle": {
+              "expr": {
+                "Literal": {
+                  "Value": "'road'"
+                }
+              }
+            },
+            "showStylePicker": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }
@@ -247,7 +266,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Top Listings by Revenue'"
+                  "Value": "'Top Listings by Revenue Potential'"
                 }
               }
             }
@@ -268,6 +287,26 @@
               "expr": {
                 "Literal": {
                   "Value": "4D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Colored by Price'"
                 }
               }
             }
@@ -341,7 +380,7 @@
                         }
                       }
                     ],
-                    "Top": 20
+                    "Top": 50
                   }
                 }
               },
@@ -380,6 +419,86 @@
           ]
         },
         "howCreated": "User"
+      },
+      {
+        "name": "396f747d018bc663e89d",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Fact_Listings"
+                  }
+                },
+                "Property": "name"
+              }
+            },
+            "Function": 3
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "edac7b2fce779d7e2439",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Fact_Listings"
+                  }
+                },
+                "Property": "price"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "a1ef65f3bfe47619f0d1",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "Total Revenue Potential"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "3c23d6d6fea898476ea1",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact_Listings"
+              }
+            },
+            "Property": "longitude"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "54765af35ff678390039",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact_Listings"
+              }
+            },
+            "Property": "latitude"
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }

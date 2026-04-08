@@ -379,37 +379,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "8eb598bbe64d837d34a4",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Measures"
-              }
-            },
-            "Property": "Average Price No Filters"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "5e9ee0874feec868756a",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Measures"
-              }
-            },
-            "Property": "Average Price"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }
