@@ -49,7 +49,7 @@
                     [
                       {
                         "Literal": {
-                          "Value": "'East Village'"
+                          "Value": "'Midtown'"
                         }
                       }
                     ]
@@ -59,21 +59,6 @@
             }
           ]
         },
-        "howCreated": "Drillthrough"
-      },
-      {
-        "name": "4fdae95384f604335924",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Dim_Neighbourhood"
-              }
-            },
-            "Property": "neighbourhood_group"
-          }
-        },
-        "type": "Categorical",
         "howCreated": "Drillthrough"
       }
     ]
@@ -93,20 +78,6 @@
               }
             },
             "Property": "neighbourhood"
-          }
-        }
-      },
-      {
-        "name": "35561769eb2908c48878",
-        "boundFilter": "4fdae95384f604335924",
-        "fieldExpr": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Dim_Neighbourhood"
-              }
-            },
-            "Property": "neighbourhood_group"
           }
         }
       }
@@ -155,5 +126,32 @@
       }
     ]
   },
-  "visibility": "HiddenInViewMode"
+  "visibility": "HiddenInViewMode",
+  "visualInteractions": [
+    {
+      "source": "8558ce53d85415874571",
+      "target": "f46817873a00779b316a",
+      "type": "NoFilter"
+    },
+    {
+      "source": "b8233204b552bbf7500f",
+      "target": "8558ce53d85415874571",
+      "type": "NoFilter"
+    },
+    {
+      "source": "b8233204b552bbf7500f",
+      "target": "a9bfede78a72341720d7",
+      "type": "NoFilter"
+    },
+    {
+      "source": "b8233204b552bbf7500f",
+      "target": "f46817873a00779b316a",
+      "type": "NoFilter"
+    },
+    {
+      "source": "b8233204b552bbf7500f",
+      "target": "6da5e14296e1f9d7a5d2",
+      "type": "NoFilter"
+    }
+  ]
 }

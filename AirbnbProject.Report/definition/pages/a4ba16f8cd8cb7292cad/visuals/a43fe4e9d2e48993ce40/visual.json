@@ -19,12 +19,24 @@
               {
                 "textRuns": [
                   {
-                    "value": "Dashboard Description HERE",
+                    "value": "This page is meant to give a better perspective on the hosts distribution and the relations between prices and number of listings, as well as the reviews distribution across boroughs.",
                     "textStyle": {
                       "color": "#ffffff"
                     }
                   }
-                ]
+                ],
+                "listType": "ordered"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Left-click on any host and select Drillthrough to get specific details on that host.",
+                    "textStyle": {
+                      "color": "#ffffff"
+                    }
+                  }
+                ],
+                "listType": "ordered"
               }
             ]
           }
@@ -105,7 +117,7 @@
                   "expr": {
                     "ThemeDataColor": {
                       "ColorId": 1,
-                      "Percent": 0
+                      "Percent": 0.6
                     }
                   }
                 }
@@ -114,7 +126,7 @@
             "transparency": {
               "expr": {
                 "Literal": {
-                  "Value": "49D"
+                  "Value": "47D"
                 }
               }
             }

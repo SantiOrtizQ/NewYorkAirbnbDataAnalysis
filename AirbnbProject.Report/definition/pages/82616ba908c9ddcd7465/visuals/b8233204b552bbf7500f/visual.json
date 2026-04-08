@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "b8233204b552bbf7500f",
   "position": {
-    "x": 576,
+    "x": 608,
     "y": 392,
     "z": 5000,
     "height": 312,
-    "width": 688,
+    "width": 656,
     "tabOrder": 5000
   },
   "visual": {
@@ -34,6 +34,20 @@
               "queryRef": "Min(Fact_Listings.name)",
               "nativeQueryRef": "Name",
               "displayName": "Name"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Total Revenue Potential"
+                }
+              },
+              "queryRef": "_Measures.Total Revenue Potential",
+              "nativeQueryRef": "Total Revenue Potential"
             }
           ]
         },
@@ -167,6 +181,19 @@
               "expr": {
                 "Literal": {
                   "Value": "'TopCenter'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "categoryLabels": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }

@@ -168,6 +168,26 @@
             }
           }
         }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Default Filtering by Top on Total Listings'"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "drillFilterOtherVisuals": true
@@ -274,6 +294,20 @@
             }
           ]
         }
+      },
+      {
+        "name": "b0e76029edf5defa49b1",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "Total Listings"
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }

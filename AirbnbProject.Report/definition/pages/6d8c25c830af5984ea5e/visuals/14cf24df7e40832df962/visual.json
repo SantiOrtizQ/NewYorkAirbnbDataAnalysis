@@ -223,21 +223,21 @@
             "zoom": {
               "expr": {
                 "Literal": {
-                  "Value": "8.57D"
+                  "Value": "0D"
                 }
               }
             },
             "centerLatitude": {
               "expr": {
                 "Literal": {
-                  "Value": "40.71229253841207D"
+                  "Value": "0D"
                 }
               }
             },
             "centerLongitude": {
               "expr": {
                 "Literal": {
-                  "Value": "-73.93194D"
+                  "Value": "0D"
                 }
               }
             },
@@ -419,86 +419,6 @@
           ]
         },
         "howCreated": "User"
-      },
-      {
-        "name": "396f747d018bc663e89d",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Fact_Listings"
-                  }
-                },
-                "Property": "name"
-              }
-            },
-            "Function": 3
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "edac7b2fce779d7e2439",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Fact_Listings"
-                  }
-                },
-                "Property": "price"
-              }
-            },
-            "Function": 0
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "a1ef65f3bfe47619f0d1",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Measures"
-              }
-            },
-            "Property": "Total Revenue Potential"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "3c23d6d6fea898476ea1",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Fact_Listings"
-              }
-            },
-            "Property": "longitude"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "54765af35ff678390039",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Fact_Listings"
-              }
-            },
-            "Property": "latitude"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

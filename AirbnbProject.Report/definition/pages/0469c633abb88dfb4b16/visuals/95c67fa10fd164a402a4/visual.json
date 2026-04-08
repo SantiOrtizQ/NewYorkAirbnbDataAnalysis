@@ -54,6 +54,20 @@
               "queryRef": "Sum(Fact_Listings.price)",
               "nativeQueryRef": "Price",
               "displayName": "Price"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Total Revenue Potential"
+                }
+              },
+              "queryRef": "_Measures.Total Revenue Potential",
+              "nativeQueryRef": "Total Revenue Potential"
             }
           ]
         },
@@ -204,7 +218,7 @@
             "zoom": {
               "expr": {
                 "Literal": {
-                  "Value": "0.24D"
+                  "Value": "0.22D"
                 }
               }
             },
@@ -218,7 +232,7 @@
             "centerLongitude": {
               "expr": {
                 "Literal": {
-                  "Value": "-0.29850491444767613D"
+                  "Value": "-0.3015049894921731D"
                 }
               }
             }
@@ -267,6 +281,26 @@
               "expr": {
                 "Literal": {
                   "Value": "4D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Colored by Price'"
                 }
               }
             }
@@ -379,6 +413,72 @@
           ]
         },
         "howCreated": "User"
+      },
+      {
+        "name": "2a0783649329286825e2",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Fact_Listings"
+                  }
+                },
+                "Property": "name"
+              }
+            },
+            "Function": 3
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "64ede2baf0a35518d92b",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Fact_Listings"
+                  }
+                },
+                "Property": "price"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "188639975e5a64bd3c63",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact_Listings"
+              }
+            },
+            "Property": "longitude"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "6a320fbe9fc39236c1a4",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact_Listings"
+              }
+            },
+            "Property": "latitude"
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }

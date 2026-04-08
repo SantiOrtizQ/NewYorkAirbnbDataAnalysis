@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.0.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
   "name": "e6495c3a9a2e4f8a516a",
   "displayName": "Pricing & Market Analysis",
   "displayOption": "FitToPage",
@@ -46,5 +46,67 @@
         }
       }
     ]
-  }
+  },
+  "visualInteractions": [
+    {
+      "source": "7e15ecd104a79429bdc4",
+      "target": "642e7a7e6f0dc03b8cee",
+      "type": "NoFilter"
+    },
+    {
+      "source": "e68fb54bb05aa936bf7d",
+      "target": "8e3f5ab72827d6bc2f25",
+      "type": "NoFilter"
+    },
+    {
+      "source": "e68fb54bb05aa936bf7d",
+      "target": "642e7a7e6f0dc03b8cee",
+      "type": "NoFilter"
+    },
+    {
+      "source": "69ff271de0a8b680cb97",
+      "target": "35110ccae2c6562afa95",
+      "type": "NoFilter"
+    },
+    {
+      "source": "69ff271de0a8b680cb97",
+      "target": "642e7a7e6f0dc03b8cee",
+      "type": "NoFilter"
+    },
+    {
+      "source": "69ff271de0a8b680cb97",
+      "target": "8e3f5ab72827d6bc2f25",
+      "type": "NoFilter"
+    },
+    {
+      "source": "35110ccae2c6562afa95",
+      "target": "69ff271de0a8b680cb97",
+      "type": "NoFilter"
+    },
+    {
+      "source": "35110ccae2c6562afa95",
+      "target": "642e7a7e6f0dc03b8cee",
+      "type": "NoFilter"
+    },
+    {
+      "source": "35110ccae2c6562afa95",
+      "target": "8e3f5ab72827d6bc2f25",
+      "type": "NoFilter"
+    },
+    {
+      "source": "8e3f5ab72827d6bc2f25",
+      "target": "35110ccae2c6562afa95",
+      "type": "DataFilter"
+    },
+    {
+      "source": "642e7a7e6f0dc03b8cee",
+      "target": "8e3f5ab72827d6bc2f25",
+      "type": "HighlightFilter"
+    },
+    {
+      "source": "642e7a7e6f0dc03b8cee",
+      "target": "35110ccae2c6562afa95",
+      "type": "DataFilter"
+    }
+  ]
 }

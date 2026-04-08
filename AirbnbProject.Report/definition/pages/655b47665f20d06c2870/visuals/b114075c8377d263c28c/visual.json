@@ -196,6 +196,34 @@
           "selector": {
             "id": "default"
           }
+        },
+        {
+          "properties": {
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "2L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Measures.Total Reviews"
+          }
+        },
+        {
+          "properties": {
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "1L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Measures.Revenue Potential per Listing"
+          }
         }
       ],
       "fillCustom": [

@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.0.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
   "name": "0469c633abb88dfb4b16",
   "displayName": "Borough Deep Dive",
   "displayOption": "FitToPage",
@@ -125,5 +125,37 @@
       }
     ]
   },
-  "visibility": "HiddenInViewMode"
+  "visibility": "HiddenInViewMode",
+  "visualInteractions": [
+    {
+      "source": "acf5e925ac72314ca352",
+      "target": "d71c29f1f1cf65c4e741",
+      "type": "NoFilter"
+    },
+    {
+      "source": "87c0e5ee6f7075ae3bd7",
+      "target": "d71c29f1f1cf65c4e741",
+      "type": "NoFilter"
+    },
+    {
+      "source": "d71c29f1f1cf65c4e741",
+      "target": "87c0e5ee6f7075ae3bd7",
+      "type": "NoFilter"
+    },
+    {
+      "source": "95c67fa10fd164a402a4",
+      "target": "d71c29f1f1cf65c4e741",
+      "type": "NoFilter"
+    },
+    {
+      "source": "95c67fa10fd164a402a4",
+      "target": "87c0e5ee6f7075ae3bd7",
+      "type": "NoFilter"
+    },
+    {
+      "source": "95c67fa10fd164a402a4",
+      "target": "acf5e925ac72314ca352",
+      "type": "NoFilter"
+    }
+  ]
 }

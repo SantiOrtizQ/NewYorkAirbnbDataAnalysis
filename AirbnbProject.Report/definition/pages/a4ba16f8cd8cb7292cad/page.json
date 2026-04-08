@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.0.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
   "name": "a4ba16f8cd8cb7292cad",
   "displayName": "Host Intelligence",
   "displayOption": "FitToPage",
@@ -46,5 +46,42 @@
         }
       }
     ]
-  }
+  },
+  "visualInteractions": [
+    {
+      "source": "6046f97612ab8323e94b",
+      "target": "13c13a5f3e394702d3be",
+      "type": "NoFilter"
+    },
+    {
+      "source": "b27437ca9874a7cd46a4",
+      "target": "522339cad80afe75fd8c",
+      "type": "NoFilter"
+    },
+    {
+      "source": "f8e4e5b17cc020169bea",
+      "target": "b27437ca9874a7cd46a4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "f8e4e5b17cc020169bea",
+      "target": "522339cad80afe75fd8c",
+      "type": "NoFilter"
+    },
+    {
+      "source": "522339cad80afe75fd8c",
+      "target": "b27437ca9874a7cd46a4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "13c13a5f3e394702d3be",
+      "target": "b27437ca9874a7cd46a4",
+      "type": "DataFilter"
+    },
+    {
+      "source": "13c13a5f3e394702d3be",
+      "target": "522339cad80afe75fd8c",
+      "type": "DataFilter"
+    }
+  ]
 }
