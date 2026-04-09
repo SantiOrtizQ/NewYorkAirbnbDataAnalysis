@@ -37,7 +37,7 @@ The analysis is divided into several specialized views to facilitate data explor
 
 ## Tools Used
 * **Power BI Desktop:** For data modeling, DAX calculations, and visualization.
-* **Dataset:** 2019 New York City Airbnb open data. Access it here[Here](https://www.kaggle.com/datasets/dgomonov/new-york-city-airbnb-open-data).
+* **Dataset:** 2019 New York City Airbnb open data. Access it [here](https://www.kaggle.com/datasets/dgomonov/new-york-city-airbnb-open-data).
 
 ## How to Use
 1. Clone this repository to your local machine.
